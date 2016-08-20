@@ -4,13 +4,14 @@ MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
 ADD tester.ini /etc/php/mods-available/tester.ini
 
-RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
+RUN apt-get update && apt-get install -y gnupg2 curl && \
+    echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
-    wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
-    apt-get update && \
+    gpg --keyserver keys.gnupg.net --recv-key 89DF5277 && gpg -a --export 89DF5277 | apt-key add - && \
     apt-get install -y \
         php7.0-cli \
         php7.0-cgi \
+        php7.0-common \
         php7.0-curl \
         php7.0-imap \
         php7.0-pgsql \
@@ -36,5 +37,6 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cli/conf.d/999-tester.ini && \
     ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cgi/conf.d/999-tester.ini && \
+    apt-get remove -y gnupg2 curl && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
