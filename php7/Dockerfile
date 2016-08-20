@@ -4,7 +4,7 @@ MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
 ADD tester.ini /etc/php/mods-available/tester.ini
 
-RUN apt-get update && apt-get install -y gnupg2 curl && \
+RUN apt-get update && apt-get install -y gnupg2 curl git && \
     echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
     gpg --keyserver keys.gnupg.net --recv-key 89DF5277 && gpg -a --export 89DF5277 | apt-key add - && \
