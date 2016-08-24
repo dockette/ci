@@ -10,35 +10,31 @@ RUN apt-get update && apt-get update -y && apt-get install -y gnupg2 curl git &&
     gpg --keyserver keys.gnupg.net --recv-key 89DF5277 && gpg -a --export 89DF5277 | apt-key add - && \
     apt-get update && \
     apt-get install -y \
-        php7.0-cli \
-        php7.0-cgi \
-        php7.0-common \
-        php7.0-curl \
-        php7.0-imap \
-        php7.0-pgsql \
-        php7.0-mysql \
-        php7.0-sqlite \
-        php7.0-gd \
-        php7.0-intl \
-        php7.0-mongo \
-        php7.0-geoip \
-        php7.0-memcached \
-        php7.0-mbstring \
-        php7.0-mcrypt \
-        php7.0-xsl \
-        php7.0-imagick \
-        php7.0-ldap \
-        php7.0-redis \
-        php7.0-xmlrpc \
-        php7.0-bz2 \
-        php7.0-ssh2 \
-        php7.0-zip \
-        php7.0-apcu \
-        php7.0-bcmath \
-        php7.0-xdebug && \
+        php5-cli \
+        php5-common \
+        php5-cgi \
+        php5-curl \
+        php5-imap \
+        php5-pgsql \
+        php5-mysql \
+        php5-sqlite \
+        php5-gd \
+        php5-intl \
+        php5-mongo \
+        php5-geoip \
+        php5-memcached \
+        php5-mcrypt \
+        php5-xsl \
+        php5-imagick \
+        php5-ldap \
+        php5-redis \
+        php5-xmlrpc \
+        php5-ssh2 \
+        php5-apcu \
+        php5-xdebug && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cli/conf.d/999-tester.ini && \
-    ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cgi/conf.d/999-tester.ini && \
+    ln -s /etc/php/mods-available/tester.ini /etc/php5/cli/conf.d/999-tester.ini && \
+    ln -s /etc/php/mods-available/tester.ini /etc/php5/cgi/conf.d/999-tester.ini && \
     apt-get remove -y gnupg2 curl && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
