@@ -2,7 +2,9 @@ FROM dockette/debian:jessie
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD tester.ini /etc/php/mods-available/tester.ini
+ADD conf/tester.ini /etc/php/mods-available/
+ADD bin/php-enable-xdebug /usr/bin/
+ADD bin/php-disable-xdebug /usr/bin/
 
 RUN apt-get update && apt-get update -y && apt-get install -y gnupg2 curl git && \
     echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list.d/dotdeb.list && \
@@ -35,6 +37,7 @@ RUN apt-get update && apt-get update -y && apt-get install -y gnupg2 curl git &&
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     ln -s /etc/php/mods-available/tester.ini /etc/php5/cli/conf.d/999-tester.ini && \
     ln -s /etc/php/mods-available/tester.ini /etc/php5/cgi/conf.d/999-tester.ini && \
+    chmod +x /usr/bin/php-enable-xdebug && chmod +x /usr/bin/php-disable-xdebug && \
     apt-get remove -y gnupg2 curl && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*

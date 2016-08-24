@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sed -i -- 's/;zend/zend/g' /etc/php5/mods-available/xdebug.ini
