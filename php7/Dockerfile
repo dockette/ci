@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install -y gnupg2 curl git && \
         php7.0-ssh2 \
         php7.0-zip \
         php7.0-apcu \
+        php7.0-bcmath \
         php7.0-xdebug && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cli/conf.d/999-tester.ini && \
