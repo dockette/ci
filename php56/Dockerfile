@@ -12,6 +12,7 @@ RUN apt-get update && apt-get update -y && apt-get install -y gnupg2 curl git &&
     gpg --keyserver keys.gnupg.net --recv-key 89DF5277 && gpg -a --export 89DF5277 | apt-key add - && \
     apt-get update && \
     apt-get install -y \
+        ca-certificates \
         php5-cli \
         php5-common \
         php5-cgi \
