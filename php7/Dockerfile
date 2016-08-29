@@ -2,7 +2,7 @@ FROM dockette/debian:jessie
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD conf/tester.ini /etc/php/mods-available/
+ADD conf/tester.ini /etc/php/7.0/mods-available/
 ADD bin/php-enable-xdebug /usr/bin/
 ADD bin/php-disable-xdebug /usr/bin/
 
@@ -39,8 +39,8 @@ RUN apt-get update && apt-get update -y && apt-get install -y gnupg2 curl git &&
         php7.0-bcmath \
         php7.0-xdebug && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cli/conf.d/999-tester.ini && \
-    ln -s /etc/php/mods-available/tester.ini /etc/php/7.0/cgi/conf.d/999-tester.ini && \
+    ln -s /etc/php/7.0/mods-available/tester.ini /etc/php/7.0/cli/conf.d/999-tester.ini && \
+    ln -s /etc/php/7.0/mods-available/tester.ini /etc/php/7.0/cgi/conf.d/999-tester.ini && \
     chmod +x /usr/bin/php-enable-xdebug && chmod +x /usr/bin/php-disable-xdebug && \
     apt-get remove -y gnupg2 curl && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
