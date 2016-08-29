@@ -35,6 +35,7 @@ RUN apt-get update && apt-get update -y && apt-get install -y gnupg2 curl git &&
         php5-apcu \
         php5-xdebug && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    composer global require "hirak/prestissimo:^0.3" && \
     ln -s /etc/php5/mods-available/tester.ini /etc/php5/cli/conf.d/999-tester.ini && \
     ln -s /etc/php5/mods-available/tester.ini /etc/php5/cgi/conf.d/999-tester.ini && \
     chmod +x /usr/bin/php-enable-xdebug && chmod +x /usr/bin/php-disable-xdebug && \
