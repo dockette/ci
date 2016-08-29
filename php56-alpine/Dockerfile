@@ -2,12 +2,13 @@ FROM alpine:edge
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD conf/tester.ini /etc/php5/mods-available/
-ADD bin/php-enable-xdebug /usr/bin/
-ADD bin/php-disable-xdebug /usr/bin/
+ADD conf/tester.ini /etc/php5/conf.d/
+
+ENV PHP_BIN=/usr/bin/php
+ENV PHPXD_BIN=/usr/bin/phpxd
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    apk update && apk upgrade && apk --no-cache add ca-certificates wget && \
+    apk update && apk upgrade && apk --no-cache add ca-certificates wget curl && \
     apk add \
         php5 \
         php5-cli \
@@ -24,15 +25,22 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php5-memcached@testing \
         php5-mcrypt \
         php5-xsl \
-        php5-imagick \
         php5-ldap \
+        php5-openssl \
+        php5-json \
+        php5-phar \
         php5-redis@testing \
         php5-xmlrpc \
         php5-ssh2@testing \
         php5-apcu \
         php5-xdebug && \
+        sed -i -- 's/zend/;zend/g' /etc/php5/conf.d/xdebug.ini && \
+        echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
+        chmod +x $PHPXD_BIN && \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-php5-mongo/master/sgerrand.rsa.pub && \
     wget https://github.com/sgerrand/alpine-pkg-php5-mongo/releases/download/1.16.4-r0/php5-mongo-1.6.14-r0.apk && \
     apk add php5-mongo-1.6.14-r0.apk && \
-    apk del wget ca-certificates php5-mongo-1.6.14-r0.apk sgerrand.rsa.pub && \
+    apk del wget curl ca-certificates && \
+    rm php5-mongo-1.6.14-r0.apk /etc/apk/keys/sgerrand.rsa.pub && \
     rm -rf /var/cache/apk/*
