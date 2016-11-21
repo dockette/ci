@@ -1,4 +1,4 @@
-FROM dockette/edge
+FROM dockette/alpine
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
@@ -12,7 +12,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
-    apk update && apk upgrade && apk add ca-certificates curl && \
+    apk update && apk upgrade && apk --no-cache add ca-certificates curl && \
     # PHP ######################################################################
     apk add \
         php7 \
@@ -53,3 +53,5 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     # CLEAN UP #################################################################
     apk del curl && \
     rm -rf /var/cache/apk/*
+
+CMD php
