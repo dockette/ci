@@ -1,4 +1,4 @@
-FROM dockette/debian:jessie
+FROM dockette/jessie
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
@@ -48,7 +48,7 @@ RUN apt-get update && apt-get update -y && \
     ln -s /etc/php/7.0/mods-available/tester.ini /etc/php/7.0/cli/conf.d/999-tester.ini && \
     ln -s /etc/php/7.0/mods-available/tester.ini /etc/php/7.0/cgi/conf.d/999-tester.ini && \
     chmod +x /usr/bin/php-enable-xdebug && chmod +x /usr/bin/php-disable-xdebug && \
-    # DEPENDENCIES #############################################################
+    # CLEAN UP #################################################################
     apt-get remove -y gnupg2 curl && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
