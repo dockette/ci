@@ -33,6 +33,8 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-xsl \
         php7-ldap \
         php7-openssl \
+        php7-iconv \
+        php7-mbstring \
         php7-json \
         php7-phar \
         php7-redis@testing \
