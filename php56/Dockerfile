@@ -2,7 +2,7 @@ FROM dockette/debian:jessie
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD conf/tester.ini /etc/php5/mods-available/
+ADD conf/ci.ini /etc/php5/mods-available/
 ADD bin/php-enable-xdebug /usr/bin/
 ADD bin/php-disable-xdebug /usr/bin/
 

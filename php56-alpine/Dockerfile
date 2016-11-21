@@ -1,8 +1,8 @@
-FROM alpine:edge
+FROM dockette/edge
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD conf/tester.ini /etc/php5/conf.d/
+ADD conf/ci.ini /etc/php5/conf.d/
 
 ENV PHP_DIR=/usr/bin
 ENV PHP_BIN=$PHP_DIR/php
