@@ -12,7 +12,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
-    apk update && apk upgrade && apk --no-cache add ca-certificates curl && \
+    apk update && apk upgrade && apk --no-cache add bash ca-certificates curl && \
     # PHP ######################################################################
     apk add \
         php7 \
