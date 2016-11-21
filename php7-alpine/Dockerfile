@@ -41,6 +41,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-xmlrpc \
         php7-ssh2@testing \
         php7-apcu@testing \
+        php7-zlib && \
         php7-xdebug && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
