@@ -37,7 +37,6 @@ RUN apt-get update && apt-get update -y && \
         php5-xmlrpc \
         php5-ssh2 \
         php5-apcu \
-        php5-zip \
         php5-xdebug && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
