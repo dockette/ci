@@ -16,33 +16,37 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     # PHP ######################################################################
     apk add \
         php5 \
+        php5-amqp@testing \
+        php5-apcu@testing \
+        php5-bcmath \
+        php5-cgi \
         php5-cli \
         php5-common \
-        php5-cgi \
         php5-curl \
-        php5-imap \
-        php5-pdo \
-        php5-pgsql \
-        php5-mysql \
-        php5-sqlite3 \
         php5-gd \
+        php5-iconv \
+        php5-imagick \
+        php5-imap \
         php5-intl \
-        php5-bcmath \
-        php5-amqp@testing \
-        php5-geoip@testing \
-        php5-memcached@testing \
-        php5-mcrypt \
-        php5-xsl \
-        php5-ldap \
-        php5-openssl \
         php5-json \
+        php5-ldap \
+        php5-mcrypt \
+        php5-memcached@testing \
+        php5-mysqli \
+        php5-openssl \
+        php5-pdo \
+        php5-pdo_mysql \
+        php5-pdo_pgsql \
+        php5-pdo_sqlite \
         php5-phar \
+        php5-pgsql \
         php5-redis@testing \
-        php5-xmlrpc \
+        php5-sqlite3 \
         php5-ssh2@testing \
-        php5-apcu \
-        php5-zip \
-        php-xdebug && \
+        php5-xdebug \
+        php5-xmlrpc \
+        php5-xsl \
+        php5-zip && \
         sed -i -- 's/zend/;zend/g' /etc/php5/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
