@@ -5,8 +5,56 @@
 
 ## Images
 
+### PHP
 
+| PHP    | OS     | Tag    |
+|--------|--------|--------|
+| PHP 7  | alpine | php7   |
+| PHP 56 | alpine | php56  |
+| PHP 7  | debian | php7d  |
+| PHP 56 | debian | php56d |
 
-## 3rd party
+### Packages
 
-- Composer (+ prestissimo)
+All PHP images have a few preinstalled packages:
+
+- bash
+- curl
+- git
+- openssh
+- ca-certificates
+
+There is also preinstalled great package manager for PHP **Composer** with
+fast plugin **prestissimo**.
+
+![Composer](https://avatars3.githubusercontent.com/u/837015?v=3&s=200)
+
+### PHP 7 (alpine)
+
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php7.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php7/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php7.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php7/)
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php7
+```
+
+### PHP 56 (alpine)
+
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php5.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php56)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php5.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php7/)
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php56
+```
+
+### PHP 7 (debian)
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php7d
+```
+
+### PHP 56 (debian)
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php56d
+```
