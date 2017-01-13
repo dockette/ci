@@ -12,7 +12,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
-    apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl && \
+    apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl openssh && \
     # PHP ######################################################################
     apk add \
         php7 \
@@ -54,7 +54,6 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     curl -sS https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR --filename=composer && \
     composer global require "hirak/prestissimo:^0.3" && \
     # CLEAN UP #################################################################
-    apk del curl && \
     rm -rf /var/cache/apk/*
 
 CMD php

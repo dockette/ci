@@ -12,7 +12,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
-    apk update && apk upgrade && apk --no-cache add bash git ca-certificates wget curl && \
+    apk update && apk upgrade && apk --no-cache add bash git ca-certificates wget curl openssh && \
     # PHP ######################################################################
     apk add \
         php5 \
@@ -54,7 +54,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     wget https://github.com/sgerrand/alpine-pkg-php5-mongo/releases/download/1.16.4-r0/php5-mongo-1.6.14-r0.apk && \
     apk add php5-mongo-1.6.14-r0.apk && \
     # CLEAN UP #################################################################
-    apk del wget curl && \
+    apk del wget && \
     rm php5-mongo-1.6.14-r0.apk /etc/apk/keys/sgerrand.rsa.pub && \
     rm -rf /var/cache/apk/*
 
