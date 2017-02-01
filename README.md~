@@ -23,7 +23,6 @@ These images have preinstalled couple of PHP extensions. Let's take a look.
 | apcu@testing      | apcu@testing      |
 | bcmath            | bcmath            |
 | -                 | bz2               |
-| calendar          | calendar          |
 | cgi               | cgi               |
 | common            | common            |
 | cli               | -                 |

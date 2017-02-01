@@ -19,6 +19,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php5-amqp@testing \
         php5-apcu@testing \
         php5-bcmath \
+        php5-calendar \
         php5-cgi \
         php5-cli \
         php5-common \

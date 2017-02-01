@@ -21,6 +21,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-apcu@testing \
         php7-bcmath \
         php7-bz2 \
+        php7-calendar \
         php7-cgi \
         php7-common \
         php7-curl \
