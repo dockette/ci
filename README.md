@@ -11,9 +11,8 @@
 |--------|--------|--------|
 | PHP 7  | alpine | php7   |
 | PHP 56 | alpine | php56  |
-| PHP 7  | debian | php7d  |
-| PHP 56 | debian | php56d |
 
+#### Extensions
 
 These images have preinstalled couple of PHP extensions. Let's take a look.
 
@@ -57,7 +56,7 @@ These images have preinstalled couple of PHP extensions. Let's take a look.
 | xsl               | xls               |
 | zip               | zip               |
 
-### Packages
+#### Extra 3rd party
 
 All PHP images have a few preinstalled packages:
 
@@ -71,6 +70,8 @@ There is also preinstalled great package manager for PHP **Composer** with
 fast plugin **prestissimo**.
 
 ![Composer](https://avatars3.githubusercontent.com/u/837015?v=3&s=200)
+
+-----
 
 ### PHP 7 (alpine)
 
@@ -97,14 +98,3 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php5
 docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 ```
 
-### PHP 7 (debian)
-
-```
-docker run -it --rm -v $(pwd):/srv dockette/ci:php7d
-```
-
-### PHP 56 (debian)
-
-```
-docker run -it --rm -v $(pwd):/srv dockette/ci:php56d
-```
