@@ -9,6 +9,7 @@ ENV PHP_BIN=$PHP_DIR/php
 ENV PHPXD_BIN=$PHP_DIR/phpxd
 ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
+ENV TZ=Europe/Prague
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
