@@ -25,6 +25,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-cgi \
         php7-common \
         php7-curl \
+        php7-gettext \
         php7-gd \
         php7-iconv \
         php7-imap \

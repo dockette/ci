@@ -28,6 +28,7 @@ These images have preinstalled couple of PHP extensions. Let's take a look.
 | common            | common            |
 | cli               | -                 |
 | curl              | curl              |
+| gettext           | gettext           |
 | gd                | gd                |
 | iconv             | iconv             |
 | imagick           | -                 |
