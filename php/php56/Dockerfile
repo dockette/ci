@@ -24,6 +24,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php5-cgi \
         php5-cli \
         php5-common \
+        php5-ctype \
         php5-curl \
         php5-gettext \
         php5-gd \
