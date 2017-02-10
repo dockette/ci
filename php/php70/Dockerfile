@@ -16,7 +16,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     # DEPENDENCIES #############################################################
     apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl openssh && \
     # PHP ######################################################################
-    apk add \
+    apk add --update \
         php7 \
         php7-amqp@testing \
         php7-apcu@testing \
