@@ -45,6 +45,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7.1-sqlite3@testing \
         php7-xdebug@community \
         php7.1-xmlrpc@testing \
+        php7.1-xmlwriter@testing \
         php7.1-xsl@testing \
         php7.1-zip@testing && \
         cp /etc/php7/conf.d/xdebug.ini /etc/php7.1/conf.d/xdebug.ini && \
