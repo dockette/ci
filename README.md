@@ -5,12 +5,21 @@
 
 ## Images
 
+| PHP        | OS     | Tag     |
+|------------|--------|---------|
+| PHP 7.1    | alpine | php71   |
+| PHP 7.0    | alpine | php70   |
+| PHP 5.6    | alpine | php56   |
+| NodeJS 6.x | alpine | nodejs6 |
+| NodeJS 7.x | alpine | nodejs7 |
+
 ### PHP
 
-| PHP    | OS     | Tag    |
-|--------|--------|--------|
-| PHP 7  | alpine | php7   |
-| PHP 56 | alpine | php56  |
+| PHP      | OS     | Tag    |
+|----------|--------|--------|
+| PHP 7.1  | alpine | php7.1 |
+| PHP 7.0  | alpine | php7.0 |
+| PHP 5.6  | alpine | php5.6 |
 
 #### Extensions
 
