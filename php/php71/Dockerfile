@@ -43,6 +43,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7.1-pdo_sqlite@testing \
         php7.1-phar@testing \
         php7.1-pgsql@testing \
+        php7.1-session@testing \
         php7.1-sqlite3@testing \
         php7-xdebug@community \
         php7.1-xmlrpc@testing \
