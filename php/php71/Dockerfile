@@ -17,39 +17,39 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl openssh && \
     # PHP ######################################################################
     apk add --update \
-        php7.1@testing \
-        php7.1-bcmath@testing \
-        php7.1-bz2@testing \
-        php7.1-calendar@testing \
-        php7.1-cgi@testing \
-        php7.1-ctype@testing \
-        php7.1-curl@testing \
-        php7.1-fileinfo@testing \
-        php7.1-gettext@testing \
-        php7.1-gd@testing \
-        php7.1-iconv@testing \
-        php7.1-imap@testing \
-        php7.1-intl@testing \
-        php7.1-json@testing \
-        php7.1-ldap@testing \
-        php7.1-mbstring@testing \
-        php7.1-mcrypt@testing \
-        php7.1-mysqli@testing \
-        php7.1-mysqlnd@community \
-        php7.1-openssl@testing \
-        php7.1-pdo@testing \
-        php7.1-pdo_mysql@testing \
-        php7.1-pdo_pgsql@testing \
-        php7.1-pdo_sqlite@testing \
-        php7.1-phar@testing \
-        php7.1-pgsql@testing \
-        php7.1-session@testing \
-        php7.1-sqlite3@testing \
+        php7@testing \
+        php7-bcmath@testing \
+        php7-bz2@testing \
+        php7-calendar@testing \
+        php7-cgi@testing \
+        php7-ctype@testing \
+        php7-curl@testing \
+        php7-fileinfo@testing \
+        php7-gettext@testing \
+        php7-gd@testing \
+        php7-iconv@testing \
+        php7-imap@testing \
+        php7-intl@testing \
+        php7-json@testing \
+        php7-ldap@testing \
+        php7-mbstring@testing \
+        php7-mcrypt@testing \
+        php7-mysqli@testing \
+        php7-mysqlnd@community \
+        php7-openssl@testing \
+        php7-pdo@testing \
+        php7-pdo_mysql@testing \
+        php7-pdo_pgsql@testing \
+        php7-pdo_sqlite@testing \
+        php7-phar@testing \
+        php7-pgsql@testing \
+        php7-session@testing \
+        php7-sqlite3@testing \
         php7-xdebug@community \
-        php7.1-xmlrpc@testing \
-        php7.1-xmlwriter@testing \
-        php7.1-xsl@testing \
-        php7.1-zip@testing && \
+        php7-xmlrpc@testing \
+        php7-xmlwriter@testing \
+        php7-xsl@testing \
+        php7-zip@testing && \
         cp /etc/php7/conf.d/xdebug.ini /etc/php7.1/conf.d/xdebug.ini && \
         sed -i -- 's/zend/;zend/g' /etc/php7.1/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
