@@ -2,7 +2,7 @@ FROM dockette/edge
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ENV NODEJS_VERSION=7.6.0
+ENV NODEJS_VERSION=7.7.3
 
 RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     apk update && apk upgrade && \
