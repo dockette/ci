@@ -20,40 +20,40 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7 \
         php7-amqp@testing \
         php7-apcu@testing \
-        php7-bcmath \
-        php7-bz2 \
-        php7-calendar \
-        php7-cgi \
-        php7-common \
-        php7-ctype \
-        php7-curl \
-        php7-gettext \
-        php7-gd \
-        php7-iconv \
-        php7-imap \
-        php7-intl \
-        php7-json \
-        php7-ldap \
-        php7-mbstring \
-        php7-mcrypt \
+        php7-bcmath@community \
+        php7-bz2@community \
+        php7-calendar@community \
+        php7-cgi@community \
+        php7-common@community \
+        php7-ctype@community \
+        php7-curl@community \
+        php7-gettext@community \
+        php7-gd@community \
+        php7-iconv@community \
+        php7-imap@community \
+        php7-intl@community \
+        php7-json@community \
+        php7-ldap@community \
+        php7-mbstring@community \
+        php7-mcrypt@community \
         php7-memcached@testing \
         php7-mongodb@testing \
-        php7-mysqli \
+        php7-mysqli@community \
         php7-mysqlnd@community \
-        php7-openssl \
-        php7-pdo \
-        php7-pdo_mysql \
-        php7-pdo_pgsql \
-        php7-pdo_sqlite \
-        php7-phar \
-        php7-pgsql \
+        php7-openssl@community \
+        php7-pdo@community \
+        php7-pdo_mysql@community \
+        php7-pdo_pgsql@community \
+        php7-pdo_sqlite@community \
+        php7-phar@community \
+        php7-pgsql@community \
         php7-redis@testing \
-        php7-sqlite3 \
+        php7-sqlite3@community \
         php7-ssh2@testing \
-        php7-xdebug \
-        php7-xmlrpc \
-        php7-xsl \
-        php7-zip && \
+        php7-xdebug@community \
+        php7-xmlrpc@community \
+        php7-xsl@community \
+        php7-zip@community && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \

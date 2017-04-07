@@ -24,6 +24,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-cgi@testing \
         php7-ctype@testing \
         php7-curl@testing \
+        php7-dom@testing \
         php7-fileinfo@testing \
         php7-gettext@testing \
         php7-gd@testing \
@@ -35,7 +36,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-mbstring@testing \
         php7-mcrypt@testing \
         php7-mysqli@testing \
-        php7-mysqlnd@community \
+        php7-mysqlnd@testing \
         php7-openssl@testing \
         php7-pdo@testing \
         php7-pdo_mysql@testing \
@@ -45,7 +46,8 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-pgsql@testing \
         php7-session@testing \
         php7-sqlite3@testing \
-        php7-xdebug@community \
+        php7-xdebug@testing \
+        php7-xml@testing \
         php7-xmlrpc@testing \
         php7-xmlwriter@testing \
         php7-xsl@testing \
