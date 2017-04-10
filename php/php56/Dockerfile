@@ -11,14 +11,11 @@ ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 
-RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    # DEPENDENCIES #############################################################
-    apk update && apk upgrade && apk --no-cache add bash git ca-certificates wget curl openssh && \
+RUN apk update && apk upgrade && apk --no-cache add bash git ca-certificates wget curl openssh && \
     # PHP ######################################################################
     apk add --update \
         php5 \
-        php5-amqp@testing \
-        php5-apcu@testing \
+        php5-apcu \
         php5-bcmath \
         php5-calendar \
         php5-cgi \
@@ -35,7 +32,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php5-json \
         php5-ldap \
         php5-mcrypt \
-        php5-memcached@testing \
+        php5-memcache \
         php5-mysqli \
         php5-openssl \
         php5-pdo \
@@ -44,9 +41,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php5-pdo_sqlite \
         php5-phar \
         php5-pgsql \
-        php5-redis@testing \
         php5-sqlite3 \
-        php5-ssh2@testing \
         php5-xdebug \
         php5-xmlrpc \
         php5-xsl \
