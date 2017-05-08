@@ -44,6 +44,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-phar@testing \
         php7-pgsql@testing \
         php7-session@testing \
+        php7-simplexml@testing \
         php7-sqlite3@testing \
         php7-tokenizer@testing \
         php7-xdebug@testing \
