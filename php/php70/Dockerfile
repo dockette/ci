@@ -1,4 +1,4 @@
-FROM dockette/edge
+FROM dockette/alpine:3.5
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
@@ -11,15 +11,13 @@ ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 
-RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl openssh && \
     # PHP ######################################################################
     apk add --update \
         php7 \
-        php7-amqp@testing \
-        php7-apcu@testing \
+        php7-apcu@community \
         php7-bcmath@community \
         php7-bz2@community \
         php7-calendar@community \
@@ -36,8 +34,6 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-ldap@community \
         php7-mbstring@community \
         php7-mcrypt@community \
-        php7-memcached@testing \
-        php7-mongodb@testing \
         php7-mysqli@community \
         php7-mysqlnd@community \
         php7-openssl@community \
@@ -47,9 +43,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-pdo_sqlite@community \
         php7-phar@community \
         php7-pgsql@community \
-        php7-redis@testing \
         php7-sqlite3@community \
-        php7-ssh2@testing \
         php7-xdebug@community \
         php7-xmlrpc@community \
         php7-xsl@community \
