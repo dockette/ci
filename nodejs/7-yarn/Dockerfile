@@ -10,6 +10,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/ap
     apk add --update bash git openssh curl && \
     # NODEJS ###################################################################
     apk add --update nodejs-current-npm@community && \
+    apk add --update yarn && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 

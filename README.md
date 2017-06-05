@@ -12,14 +12,16 @@
 | PHP 5.6    | alpine | php56   |
 | NodeJS 6.x | alpine | nodejs6 |
 | NodeJS 7.x | alpine | nodejs7 |
+| NodeJS 7.x | alpine | nodejs7-yarn |
+| NodeJS 7.x | alpine | nodejs7-pnpm |
 
 ### PHP
 
 | PHP      | OS     | Tag    |
 |----------|--------|--------|
-| PHP 7.1  | alpine | php7.1 |
-| PHP 7.0  | alpine | php7.0 |
-| PHP 5.6  | alpine | php5.6 |
+| PHP 7.1  | alpine | php71  |
+| PHP 7.0  | alpine | php70  |
+| PHP 5.6  | alpine | php56  |
 
 #### Extensions
 
@@ -82,23 +84,16 @@ fast plugin **prestissimo**.
 
 -----
 
-### PHP 7 (alpine)
+#### PHP 7 (alpine)
 
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php7.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php7/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php7.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php7/)
-
-```
-docker run -it --rm -v $(pwd):/srv dockette/ci:php7
-```
-
-### PHP 56 (alpine)
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php5.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php5/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php5.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php5/)
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php71.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php71/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php71.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php71/)
 
 ```
-docker run -it --rm -v $(pwd):/srv dockette/ci:php5
+docker run -it --rm -v $(pwd):/srv dockette/ci:php71
 ```
+
+#### PHP 56 (alpine)
 
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php56.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php56/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php56.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php56/)
@@ -107,3 +102,35 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php5
 docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 ```
 
+## NodeJS
+
+| NodeJS          | OS     | Tag           |
+|-----------------|--------|---------------|
+| NodeJS 6        | alpine | nodejs6       |
+| NodeJS 7        | alpine | nodejs7       |
+| NodeJS 7 + YARN | alpine | nodejs7-yarn  |
+| NodeJS 7 + PNPM | alpine | nodejs7-pnpm  |
+
+### NodeJS 7
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7
+```
+
+### NodeJS 7 + YARN
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7-yarn
+```
+
+### NodeJS 7 + PNPM
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7-pnpm
+```
+
+### NodeJS 6
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs6
+```
