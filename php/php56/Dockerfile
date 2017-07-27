@@ -43,7 +43,9 @@ RUN apk update && apk upgrade && apk --no-cache add bash git ca-certificates wge
         php5-pgsql \
         php5-sqlite3 \
         php5-xdebug \
+        php5-xml \
         php5-xmlrpc \
+        php7-xmlreader \
         php5-xsl \
         php5-zip && \
         sed -i -- 's/zend/;zend/g' /etc/php5/conf.d/xdebug.ini && \

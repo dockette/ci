@@ -47,7 +47,9 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
         php7-soap@community \
         php7-sqlite3@community \
         php7-xdebug@community \
+        php7-xml@community \
         php7-xmlrpc@community \
+        php7-xmlreader@community \
         php7-xsl@community \
         php7-zip@community && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \

@@ -50,7 +50,9 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-tokenizer@testing \
         php7-xdebug@testing \
         php7-xml@testing \
+        php7-xml@testing \
         php7-xmlrpc@testing \
+        php7-xmlreader@testing \
         php7-xmlwriter@testing \
         php7-xsl@testing \
         php7-zip@testing && \
