@@ -25,47 +25,8 @@
 
 #### Extensions
 
-These images have preinstalled couple of PHP extensions. Let's take a look.
-
-| 5.6               | 7.0               |
-|-------------------|-------------------|
-| amqp@testing      | amqp@testing      |
-| apcu@testing      | apcu@testing      |
-| bcmath            | bcmath            |
-| -                 | bz2               |
-| calendar          | calendar          |
-| cgi               | cgi               |
-| common            | common            |
-| cli               | -                 |
-| curl              | curl              |
-| gettext           | gettext           |
-| gd                | gd                |
-| iconv             | iconv             |
-| imagick           | -                 |
-| imap              | imap              |
-| intl              | intl              |
-| ldap              | ldap              |
-| -                 | mbstring          |
-| mcrypt            | mcrypt            |
-| memcached@testing | memcached@testing |
-| mongo             | mongodb@testing   |
-| mysqli            | mysqli            |
-| -                 | mysqlnd@community |
-| openssl           | openssl           |
-| pdo               | pdo               |
-| pdo_mysql         | pdo_mysql         |
-| pdo_pgsql         | pdo_pgsql         |
-| pdo_sqlite        | pdo_sqlite        |
-| phar              | phar              |
-| pgsql             | pgsql             |
-| redis@testing     | redis@testing     |
-| sqlite3           | sqlite3           |
-| ssh2              | ssh2@testing      |
-| sqlite3           | sqlite3           |
-| xdebug            | xdebug            |
-| xmlrpc            | xmlrpc            |
-| xsl               | xls               |
-| zip               | zip               |
+These images have preinstalled couple of PHP extensions. Please take a look at Dockerfiles for [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile),
+[7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile), [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile).
 
 #### Extra 3rd party
 
