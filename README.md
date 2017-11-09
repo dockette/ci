@@ -14,6 +14,8 @@
 | NodeJS 7.x | alpine | nodejs7 |
 | NodeJS 7.x | alpine | nodejs7-yarn |
 | NodeJS 7.x | alpine | nodejs7-pnpm |
+| NodeJS 8.x | alpine | nodejs8 |
+| NodeJS 9.x | alpine | nodejs9 |
 
 ### PHP
 
@@ -71,6 +73,20 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 | NodeJS 7        | alpine | nodejs7       |
 | NodeJS 7 + YARN | alpine | nodejs7-yarn  |
 | NodeJS 7 + PNPM | alpine | nodejs7-pnpm  |
+| NodeJS 8        | alpine | nodejs8       |
+| NodeJS 9        | alpine | nodejs9       |
+
+### NodeJS 9
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs9
+```
+
+### NodeJS 8
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs8
+```
 
 ### NodeJS 7
 
