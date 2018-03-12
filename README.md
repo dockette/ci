@@ -5,22 +5,24 @@
 
 ## Images
 
-| PHP        | OS     | Tag     |
-|------------|--------|---------|
-| PHP 7.1    | alpine | php71   |
-| PHP 7.0    | alpine | php70   |
-| PHP 5.6    | alpine | php56   |
-| NodeJS 6.x | alpine | nodejs6 |
-| NodeJS 7.x | alpine | nodejs7 |
-| NodeJS 7.x | alpine | nodejs7-yarn |
-| NodeJS 7.x | alpine | nodejs7-pnpm |
-| NodeJS 8.x | alpine | nodejs8 |
-| NodeJS 9.x | alpine | nodejs9 |
+| PHP             | OS     | Tag           |
+|-----------------|--------|---------------|
+| PHP 7.2         | alpine | php72         |
+| PHP 7.1         | alpine | php71         |
+| PHP 7.0         | alpine | php70         |
+| PHP 5.6         | alpine | php56         |
+| NodeJS 9        | alpine | nodejs9       |
+| NodeJS 8        | alpine | nodejs8       |
+| NodeJS 7        | alpine | nodejs7       |
+| NodeJS 7 + YARN | alpine | nodejs7-yarn  |
+| NodeJS 7 + PNPM | alpine | nodejs7-pnpm  |
+| NodeJS 6        | alpine | nodejs6       |
 
 ### PHP
 
 | PHP      | OS     | Tag    |
 |----------|--------|--------|
+| PHP 7.2  | alpine | php72  |
 | PHP 7.1  | alpine | php71  |
 | PHP 7.0  | alpine | php70  |
 | PHP 5.6  | alpine | php56  |
@@ -28,7 +30,7 @@
 #### Extensions
 
 These images have preinstalled couple of PHP extensions. Please take a look at Dockerfiles for [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile),
-[7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile), [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile).
+[7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile), [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile), [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile).
 
 #### Extra 3rd party
 
@@ -47,13 +49,24 @@ fast plugin **prestissimo**.
 
 -----
 
-#### PHP 7 (alpine)
+#### PHP 7.2 (alpine)
+
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php72.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php72/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php72.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php72/)
+
+```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php72
+docker run -it --rm -v $(pwd):/srv dockette/ci-php72
+```
+
+#### PHP 7.1 (alpine)
 
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/ci-php71.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php71/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/ci-php71.svg?style=flat)](https://hub.docker.com/r/dockette/ci-php71/)
 
 ```
 docker run -it --rm -v $(pwd):/srv dockette/ci:php71
+docker run -it --rm -v $(pwd):/srv dockette/ci-php71
 ```
 
 #### PHP 56 (alpine)
@@ -63,18 +76,19 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php71
 
 ```
 docker run -it --rm -v $(pwd):/srv dockette/ci:php56
+docker run -it --rm -v $(pwd):/srv dockette/ci-php56
 ```
 
 ## NodeJS
 
 | NodeJS          | OS     | Tag           |
 |-----------------|--------|---------------|
-| NodeJS 6        | alpine | nodejs6       |
+| NodeJS 9        | alpine | nodejs9       |
+| NodeJS 8        | alpine | nodejs8       |
 | NodeJS 7        | alpine | nodejs7       |
 | NodeJS 7 + YARN | alpine | nodejs7-yarn  |
 | NodeJS 7 + PNPM | alpine | nodejs7-pnpm  |
-| NodeJS 8        | alpine | nodejs8       |
-| NodeJS 9        | alpine | nodejs9       |
+| NodeJS 6        | alpine | nodejs6       |
 
 ### NodeJS 9
 
