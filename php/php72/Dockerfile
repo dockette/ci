@@ -1,4 +1,4 @@
-FROM dockette/edge
+FROM dockette/alpine:3.7
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
@@ -32,7 +32,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-gd@php \
         php7-iconv@php \
         php7-imap@php \
-        #php7-intl@php \
+        php7-intl@php \
         php7-json@php \
         php7-ldap@php \
         php7-mbstring@php \
