@@ -18,12 +18,12 @@ There are prepared images for PHP and Node.js.
 
 ### PHP
 
-| PHP      | OS     | Tag    |
-|----------|--------|--------|
-| PHP 7.2  | alpine | php72  |
-| PHP 7.1  | alpine | php71  |
-| PHP 7.0  | alpine | php70  |
-| PHP 5.6  | alpine | php56  |
+| PHP      | OS          | Tag    |
+|----------|-------------|--------|
+| PHP 7.2  | Alpine v3.7 | php72  |
+| PHP 7.1  | Alpine v3.7 | php71  |
+| PHP 7.0  | Alpine v3.5 | php70  |
+| PHP 5.6  | Alpine v3.5 | php56  |
 
 #### Extensions
 
@@ -81,14 +81,14 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 ## NodeJS
 
-| NodeJS          | OS     | Tag           |
-|-----------------|--------|---------------|
-| NodeJS 9        | alpine | nodejs9       |
-| NodeJS 8        | alpine | nodejs8       |
-| NodeJS 7        | alpine | nodejs7       |
-| NodeJS 7 + YARN | alpine | nodejs7-yarn  |
-| NodeJS 7 + PNPM | alpine | nodejs7-pnpm  |
-| NodeJS 6        | alpine | nodejs6       |
+| NodeJS          | OS          | Tag           |
+|-----------------|-------------|---------------|
+| NodeJS 9        | Alpine v3.7 | nodejs9       |
+| NodeJS 8        | Alpine v3.7 | nodejs8       |
+| NodeJS 7        | Alpine v3.6 | nodejs7       |
+| NodeJS 7 + YARN | Alpine v3.6 | nodejs7-yarn  |
+| NodeJS 7 + PNPM | Alpine v3.6 | nodejs7-pnpm  |
+| NodeJS 6        | Alpine v3.6 | nodejs6       |
 
 ### NodeJS 9 [[HUB](https://hub.docker.com/r/dockette/ci)]
 
