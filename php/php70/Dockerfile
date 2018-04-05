@@ -51,7 +51,8 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
         php7-xmlrpc@community \
         php7-xmlreader@community \
         php7-xsl@community \
-        php7-zip@community && \
+        php7-zip@community \
+        php7-zlib@community && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
