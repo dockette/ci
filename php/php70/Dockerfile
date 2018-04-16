@@ -54,7 +54,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
         php7-zip@community \
         php7-zlib@community && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
-        echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
+        echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
     # SYMLINKS PHP7 -> PHP #####################################################
     ln -s /etc/php7 /etc/php && \

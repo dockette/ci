@@ -59,7 +59,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-zlib@testing && \
         cp /etc/php7/conf.d/xdebug.ini /etc/php7.1/conf.d/xdebug.ini && \
         sed -i -- 's/zend/;zend/g' /etc/php7.1/conf.d/xdebug.ini && \
-        echo "php -dzend_extension=xdebug.so" >> $PHPXD_BIN && \
+        echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR --filename=composer && \

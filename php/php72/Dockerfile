@@ -59,7 +59,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-xsl@php \
         php7-zip@php && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/00_xdebug.ini && \
-        echo "php -dzend_extension=xdebug.so $@" >> $PHPXD_BIN && \
+        echo "php -dzend_extension=xdebug \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
         ln -s /usr/bin/php7 /usr/bin/php && \
     # COMPOSER #################################################################
