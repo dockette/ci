@@ -17,6 +17,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
     # PHP ######################################################################
     apk add --update \
         php7@testing \
+        php7-apcu@testing \
         php7-bcmath@testing \
         php7-bz2@testing \
         php7-calendar@testing \
