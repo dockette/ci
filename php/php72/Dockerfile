@@ -12,11 +12,21 @@ ENV PHPXD_BIN=$PHP_DIR/phpxd
 ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
+ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
-    apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl openssh && \
+    apk update && \
+    apk upgrade && \
+    apk --no-cache add \
+        bash \
+        git \
+        ca-certificates \
+        curl \
+        openssh \
+        tzdata \
+        gnu-libiconv@testing && \
     # PHP ######################################################################
     apk add --update \
         php7@php \
