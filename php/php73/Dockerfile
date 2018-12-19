@@ -15,7 +15,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    echo "@php https://php.codecasts.rocks/v3.8/php-7.2" >> /etc/apk/repositories && \
+    echo "@php https://php.codecasts.rocks/v3.8/php-7.3" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -69,7 +69,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         #php7-xmlwriter@php \
         php7-xsl@php \
         php7-zip@php && \
-        sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/00_xdebug.ini && \
+        sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
         ln -s /usr/bin/php7 /usr/bin/php && \

@@ -20,7 +20,8 @@ There are prepared images for PHP and Node.js.
 
 | PHP      | OS          | Tag    |
 |----------|-------------|--------|
-| PHP 7.2  | Alpine v3.7 | php72  |
+| PHP 7.3  | Alpine v3.8 | php73  |
+| PHP 7.2  | Alpine v3.8 | php72  |
 | PHP 7.1  | Alpine v3.7 | php71  |
 | PHP 7.0  | Alpine v3.5 | php70  |
 | PHP 5.6  | Alpine v3.5 | php56  |
@@ -28,7 +29,7 @@ There are prepared images for PHP and Node.js.
 #### Extensions
 
 These images have preinstalled couple of PHP extensions. Please take a look at Dockerfiles for [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile),
-[7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile), [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile), [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile).
+[7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile), [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile), [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile), [7.3](https://github.com/dockette/ci/blob/master/php/php73/Dockerfile).
 
 #### Extra 3rd party
 
@@ -47,81 +48,38 @@ fast plugin **prestissimo**.
 
 -----
 
-#### PHP 7.2 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-> Based on Alpine Linux v3.7.
+#### CLI
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php73
 docker run -it --rm -v $(pwd):/srv dockette/ci:php72
-```
-
-#### PHP 7.1 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-> Based on Alpine Linux v3.7.
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:php71
-```
-
-#### PHP 7.0 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-> Based on Alpine Linux v3.5.
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:php70
-```
-
-#### PHP 5.6 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-> Based on Alpine Linux v3.5.
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 ```
 
-## NodeJS
+### NodeJS
 
 | NodeJS          | OS          | Tag           |
 |-----------------|-------------|---------------|
-| NodeJS 9        | Alpine v3.7 | nodejs9       |
-| NodeJS 8        | Alpine v3.7 | nodejs8       |
+| NodeJS 9        | Alpine edge | nodejs11      |
+| NodeJS 9        | Alpine edge | nodejs10      |
+| NodeJS 9        | Alpine v3.8 | nodejs9       |
+| NodeJS 8        | Alpine v3.8 | nodejs8       |
 | NodeJS 7        | Alpine v3.6 | nodejs7       |
 | NodeJS 7 + YARN | Alpine v3.6 | nodejs7-yarn  |
 | NodeJS 7 + PNPM | Alpine v3.6 | nodejs7-pnpm  |
 | NodeJS 6        | Alpine v3.6 | nodejs6       |
 
-### NodeJS 9 [[HUB](https://hub.docker.com/r/dockette/ci)]
+#### CLI
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs11
+docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs10
 docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs9
-```
-
-### NodeJS 8 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs8
-```
-
-### NodeJS 7 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7
-```
-
-### NodeJS 7 + YARN [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7-yarn
-```
-
-### NodeJS 7 + PNPM [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7-pnpm
-```
-
-### NodeJS 6 [[HUB](https://hub.docker.com/r/dockette/ci)]
-
-```
 docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs6
 ```

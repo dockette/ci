@@ -1,8 +1,8 @@
-FROM dockette/alpine:3.8
+FROM dockette/alpine:edge
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ENV NODEJS_VERSION=8.14.0
+ENV NODEJS_VERSION=10.14.1
 
 RUN echo '@community http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
     apk update && apk upgrade && \

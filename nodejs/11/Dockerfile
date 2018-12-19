@@ -1,10 +1,10 @@
-FROM dockette/alpine:3.8
+FROM dockette/alpine:edge
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ENV NODEJS_VERSION=8.14.0
+ENV NODEJS_VERSION=11.3.0
 
-RUN echo '@community http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     apk update && apk upgrade && \
     # DEPENDENCIES #############################################################
     apk add --update bash git openssh curl && \
