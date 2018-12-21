@@ -1,7 +1,7 @@
 # CI (Continuous integration) 
 
 
-:green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux for PHP 5.6, 7.0, 7.1, 7.2 and Node.js 6, 7, 8, 9.
+:green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux for PHP 5.6, 7.0, 7.1, 7.2, 7.3 and Node.js 6, 7, 8, 9, 10, 11.
 
 -----
 
@@ -62,8 +62,8 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS          | OS          | Tag           |
 |-----------------|-------------|---------------|
-| NodeJS 9        | Alpine edge | nodejs11      |
-| NodeJS 9        | Alpine edge | nodejs10      |
+| NodeJS 11       | Alpine edge | nodejs11      |
+| NodeJS 10       | Alpine edge | nodejs10      |
 | NodeJS 9        | Alpine v3.8 | nodejs9       |
 | NodeJS 8        | Alpine v3.8 | nodejs8       |
 | NodeJS 7        | Alpine v3.6 | nodejs7       |
