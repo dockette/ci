@@ -28,7 +28,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         tzdata \
         gnu-libiconv@testing && \
     # PHP ######################################################################
-    apk add --update \
+    apk --no-cache add \
         php7@php \
         php7-apcu@php \
         php7-bcmath@php \
@@ -59,6 +59,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-session@php \
         #php7-simplexml@php \
         php7-soap@php \
+        php7-sodium@php \
         php7-sqlite3@php \
         #php7-tokenizer@php \
         php7-xdebug@php \
