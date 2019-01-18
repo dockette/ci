@@ -25,7 +25,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         tzdata \
         gnu-libiconv@testing && \
     # PHP ######################################################################
-    apk add --update \
+    apk --no-cache add \
         php7@testing \
         php7-apcu@testing \
         php7-bcmath@testing \

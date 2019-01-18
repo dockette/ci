@@ -15,7 +15,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
     # DEPENDENCIES #############################################################
     apk update && apk upgrade && apk --no-cache add bash git ca-certificates curl openssh && \
     # PHP ######################################################################
-    apk add --update \
+    apk --no-cache add \
         php7 \
         php7-apcu@community \
         php7-bcmath@community \

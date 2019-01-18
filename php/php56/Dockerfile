@@ -13,7 +13,7 @@ ENV TZ=Europe/Prague
 
 RUN apk update && apk upgrade && apk --no-cache add bash git ca-certificates wget curl openssh && \
     # PHP ######################################################################
-    apk add --update \
+    apk --no-cache add \
         php5 \
         php5-apcu \
         php5-bcmath \
