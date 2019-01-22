@@ -35,6 +35,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-ctype@testing \
         php7-curl@testing \
         php7-dom@testing \
+        php7-exif@testing \
         php7-fileinfo@testing \
         php7-gettext@testing \
         php7-gd@testing \
