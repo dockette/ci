@@ -1,8 +1,8 @@
-FROM dockette/alpine:3.8
+FROM dockette/alpine:3.9
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
-ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 ADD conf/ci.ini /etc/php7/conf.d/999-ci.ini
 
 ENV PHP_DIR=/usr/bin
@@ -14,8 +14,8 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    echo "@php https://php.codecasts.rocks/v3.8/php-7.3" >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+    echo "@php https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -26,7 +26,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         curl \
         openssh \
         tzdata \
-        gnu-libiconv@testing && \
+        gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
         php7@php \
@@ -64,7 +64,6 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-sqlite3@php \
         #php7-tokenizer@php \
         php7-xdebug@php \
-        php7-xml@php \
         php7-xml@php \
         #php7-xmlrpc@php \
         php7-xmlreader@php \
