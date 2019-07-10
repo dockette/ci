@@ -56,6 +56,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/ap
         php7-pdo_pgsql@php \
         php7-pdo_sqlite@php \
         php7-phar@php \
+        php7-phpdbg@php \
         php7-pgsql@php \
         php7-session@php \
         #php7-simplexml@php \
