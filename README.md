@@ -66,11 +66,9 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 | NodeJS 11       | Alpine edge | node11        |
 | NodeJS 10       | Alpine edge | node10        |
 | NodeJS 9        | Alpine v3.8 | node9         |
-| NodeJS 8        | Alpine v3.8 | nodejs8       |
-| NodeJS 7        | Alpine v3.6 | nodejs7       |
-| NodeJS 7 + YARN | Alpine v3.6 | nodejs7-yarn  |
-| NodeJS 7 + PNPM | Alpine v3.6 | nodejs7-pnpm  |
-| NodeJS 6        | Alpine v3.6 | nodejs6       |
+| NodeJS 8        | Alpine v3.8 | node8         |
+| NodeJS 7        | Alpine v3.6 | node7         |
+| NodeJS 6        | Alpine v3.6 | node6         |
 
 #### CLI
 
@@ -79,9 +77,7 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:node12
 docker run -it --rm -v $(pwd):/srv dockette/ci:node11
 docker run -it --rm -v $(pwd):/srv dockette/ci:node10
 docker run -it --rm -v $(pwd):/srv dockette/ci:node9
-docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs8
-docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7
-docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7-yarn
-docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs7-pnpm
-docker run -it --rm -v $(pwd):/srv dockette/ci:nodejs6
+docker run -it --rm -v $(pwd):/srv dockette/ci:node8
+docker run -it --rm -v $(pwd):/srv dockette/ci:node7
+docker run -it --rm -v $(pwd):/srv dockette/ci:node6
 ```
