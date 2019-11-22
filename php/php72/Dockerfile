@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.9
+FROM dockette/alpine:3.8
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 
@@ -15,7 +15,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "@php https://dl.bintray.com/php-alpine/v3.9/php-7.2" >> /etc/apk/repositories && \
+    echo "@php https://dl.bintray.com/php-alpine/v3.8/php-7.2" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
