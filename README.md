@@ -20,7 +20,8 @@ There are prepared images for PHP and Node.js.
 
 | PHP      | OS          | Tag    |
 |----------|-------------|--------|
-| PHP 7.3  | Alpine v3.8 | php73  |
+| PHP 7.4  | Alpine v3.9 | php74  |
+| PHP 7.3  | Alpine v3.9 | php73  |
 | PHP 7.2  | Alpine v3.8 | php72  |
 | PHP 7.1  | Alpine v3.7 | php71  |
 | PHP 7.0  | Alpine v3.5 | php70  |
@@ -28,8 +29,14 @@ There are prepared images for PHP and Node.js.
 
 #### Extensions
 
-These images have preinstalled couple of PHP extensions. Please take a look at Dockerfiles for [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile),
-[7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile), [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile), [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile), [7.3](https://github.com/dockette/ci/blob/master/php/php73/Dockerfile).
+These images have preinstalled couple of PHP extensions. Please take a look at Dockerfiles.
+
+- [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile)
+- [7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile)
+- [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile)
+- [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile)
+- [7.3](https://github.com/dockette/ci/blob/master/php/php73/Dockerfile)
+- [7.4](https://github.com/dockette/ci/blob/master/php/php74/Dockerfile)
 
 #### Extra 3rd party
 
