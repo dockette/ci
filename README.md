@@ -31,12 +31,12 @@ There are prepared images for PHP and Node.js.
 
 These images have preinstalled couple of PHP extensions. Please take a look at Dockerfiles.
 
-- [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile)
-- [7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile)
-- [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile)
-- [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile)
-- [7.3](https://github.com/dockette/ci/blob/master/php/php73/Dockerfile)
 - [7.4](https://github.com/dockette/ci/blob/master/php/php74/Dockerfile)
+- [7.3](https://github.com/dockette/ci/blob/master/php/php73/Dockerfile)
+- [7.2](https://github.com/dockette/ci/blob/master/php/php72/Dockerfile)
+- [7.1](https://github.com/dockette/ci/blob/master/php/php71/Dockerfile)
+- [7.0](https://github.com/dockette/ci/blob/master/php/php70/Dockerfile)
+- [5.6](https://github.com/dockette/ci/blob/master/php/php56/Dockerfile)
 
 #### Extra 3rd party
 
@@ -58,6 +58,7 @@ fast plugin **prestissimo**.
 #### CLI
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php74
 docker run -it --rm -v $(pwd):/srv dockette/ci:php73
 docker run -it --rm -v $(pwd):/srv dockette/ci:php72
 docker run -it --rm -v $(pwd):/srv dockette/ci:php71
@@ -67,19 +68,21 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 ### NodeJS
 
-| NodeJS          | OS          | Tag           |
-|-----------------|-------------|---------------|
-| NodeJS 12       | Alpine edge | node12        |
-| NodeJS 11       | Alpine edge | node11        |
-| NodeJS 10       | Alpine edge | node10        |
-| NodeJS 9        | Alpine v3.8 | node9         |
-| NodeJS 8        | Alpine v3.8 | node8         |
-| NodeJS 7        | Alpine v3.6 | node7         |
-| NodeJS 6        | Alpine v3.6 | node6         |
+| NodeJS          | OS           | Tag           |
+|-----------------|--------------|---------------|
+| NodeJS 13       | Alpine v3.11 | node12        |
+| NodeJS 12       | Alpine v3.10 | node12        |
+| NodeJS 11       | Alpine v3.9  | node11        |
+| NodeJS 10       | Alpine v3.9  | node10        |
+| NodeJS 9        | Alpine v3.8  | node9         |
+| NodeJS 8        | Alpine v3.8  | node8         |
+| NodeJS 7        | Alpine v3.6  | node7         |
+| NodeJS 6        | Alpine v3.6  | node6         |
 
 #### CLI
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:node13
 docker run -it --rm -v $(pwd):/srv dockette/ci:node12
 docker run -it --rm -v $(pwd):/srv dockette/ci:node11
 docker run -it --rm -v $(pwd):/srv dockette/ci:node10
