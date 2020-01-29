@@ -1,6 +1,4 @@
-FROM dockette/alpine:3.9
-
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+FROM dockette/alpine:3.10
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 ADD conf/ci.ini /etc/php7/conf.d/999-ci.ini
@@ -15,7 +13,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "@php https://dl.bintray.com/php-alpine/v3.9/php-7.4" >> /etc/apk/repositories && \
+    echo "@php https://dl.bintray.com/php-alpine/v3.10/php-7.4" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
