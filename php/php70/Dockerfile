@@ -43,6 +43,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
         php7-pdo_sqlite@community \
         php7-phar@community \
         php7-pgsql@community \
+        php7-posix@community \
         php7-session@community \
         php7-soap@community \
         php7-sqlite3@community \

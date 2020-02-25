@@ -41,6 +41,7 @@ RUN apk update && apk upgrade && apk --no-cache add bash git ca-certificates wge
         php5-pdo_sqlite \
         php5-phar \
         php5-pgsql \
+        php5-posix \
         php5-sqlite3 \
         php5-xdebug \
         php5-xml \

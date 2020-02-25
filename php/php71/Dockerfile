@@ -56,6 +56,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php7-pdo_sqlite@testing \
         php7-phar@testing \
         php7-pgsql@testing \
+        php7-posix@community \
         php7-session@testing \
         php7-simplexml@testing \
         php7-soap@testing \
