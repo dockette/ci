@@ -14,7 +14,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     echo "@php https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
@@ -26,7 +26,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/ap
         curl \
         openssh \
         tzdata \
-        gnu-libiconv@community && \
+        gnu-libiconv@edge && \
     # PHP ######################################################################
     apk --no-cache add \
         php7@php \

@@ -13,7 +13,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+    echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -24,7 +24,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         curl \
         openssh \
         tzdata \
-        gnu-libiconv@community && \
+        gnu-libiconv@edge && \
     # PHP ######################################################################
     apk --no-cache add \
         php7@testing \
