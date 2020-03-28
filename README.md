@@ -1,7 +1,7 @@
 # CI (Continuous integration) 
 
 
-:green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux for PHP 5.6, 7.0, 7.1, 7.2, 7.3 and Node.js 6, 7, 8, 9, 10, 11.
+:green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4 and Node.js 6, 7, 8, 9, 10, 11, 12, 13.
 
 -----
 
