@@ -24,6 +24,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         curl \
         openssh \
         tzdata \
+        make \
         gnu-libiconv@edge && \
     # PHP ######################################################################
     apk --no-cache add \

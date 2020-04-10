@@ -24,6 +24,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
         curl \
         openssh \
         tzdata \
+        make \
         gnu-libiconv@edge && \
     # PHP ######################################################################
     apk --no-cache add \
