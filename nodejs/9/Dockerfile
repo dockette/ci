@@ -1,7 +1,5 @@
 FROM dockette/alpine:3.8
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
-
 ENV NODEJS_VERSION=9.11.1
 
 RUN echo '@community http://nl.alpinelinux.org/alpine/v3.8/community' >> /etc/apk/repositories && \

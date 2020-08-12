@@ -1,8 +1,6 @@
-FROM dockette/alpine:3.9
+FROM dockette/alpine:3.10
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
-
-ENV NODEJS_VERSION=10.14.1
+ENV NODEJS_VERSION=10.19.0
 
 RUN apk update && apk upgrade && \
     # DEPENDENCIES #############################################################

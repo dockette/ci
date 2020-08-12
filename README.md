@@ -70,10 +70,11 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS          | OS           | Tag           |
 |-----------------|--------------|---------------|
-| NodeJS 13       | Alpine v3.11 | node12        |
-| NodeJS 12       | Alpine v3.10 | node12        |
+| NodeJS 14       | Alpine v3.12 | node14        |
+| NodeJS 13       | Alpine v3.11 | node13        |
+| NodeJS 12       | Alpine v3.12 | node12        |
 | NodeJS 11       | Alpine v3.9  | node11        |
-| NodeJS 10       | Alpine v3.9  | node10        |
+| NodeJS 10       | Alpine v3.10 | node10        |
 | NodeJS 9        | Alpine v3.8  | node9         |
 | NodeJS 8        | Alpine v3.8  | node8         |
 | NodeJS 7        | Alpine v3.6  | node7         |
@@ -82,6 +83,7 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 #### CLI
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:node14
 docker run -it --rm -v $(pwd):/srv dockette/ci:node13
 docker run -it --rm -v $(pwd):/srv dockette/ci:node12
 docker run -it --rm -v $(pwd):/srv dockette/ci:node11

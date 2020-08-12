@@ -1,7 +1,5 @@
 FROM dockette/alpine:3.6
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
-
 ENV NODEJS_VERSION=6.10.3
 
 RUN echo '@main http://nl.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories && \
