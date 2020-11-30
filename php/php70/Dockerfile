@@ -75,7 +75,6 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
     ln -s /usr/lib/php7 /usr/lib/php && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR --filename=composer && \
-    composer global require "hirak/prestissimo:^0.3" && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 

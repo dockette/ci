@@ -54,7 +54,6 @@ RUN apk update && apk upgrade && apk --no-cache add bash git ca-certificates wge
         chmod +x $PHPXD_BIN && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR --filename=composer && \
-    composer global require "hirak/prestissimo:^0.3" && \
     # MONGO ####################################################################
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-php5-mongo/master/sgerrand.rsa.pub && \
     wget https://github.com/sgerrand/alpine-pkg-php5-mongo/releases/download/1.16.4-r0/php5-mongo-1.6.14-r0.apk && \

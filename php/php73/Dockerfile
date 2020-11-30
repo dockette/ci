@@ -78,8 +78,7 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         chmod +x $PHPXD_BIN && \
         ln -s /usr/bin/php7 /usr/bin/php && \
     # COMPOSER #################################################################
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR --filename=composer && \
-    composer global require "hirak/prestissimo:^0.3" && \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
