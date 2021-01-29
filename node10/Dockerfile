@@ -4,7 +4,7 @@ ENV NODEJS_VERSION=10.19.0
 
 RUN apk update && apk upgrade && \
     # DEPENDENCIES #############################################################
-    apk add --update bash git openssh curl && \
+    apk add --update bash git ca-certificates curl openssh tzdata make && \
     # NODEJS ###################################################################
     apk add --update nodejs npm && \
     # CLEAN UP #################################################################

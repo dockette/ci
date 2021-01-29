@@ -5,7 +5,7 @@ ENV NODEJS_VERSION=12.18.3
 RUN echo '@community http://nl.alpinelinux.org/alpine/v3.12/community' >> /etc/apk/repositories && \
     apk update && apk upgrade && \
     # DEPENDENCIES #############################################################
-    apk add --update bash git openssh curl && \
+    apk add --update bash git ca-certificates curl openssh tzdata make && \
     # NODEJS ###################################################################
     apk add --update nodejs-current npm && \
     # CLEAN UP #################################################################
