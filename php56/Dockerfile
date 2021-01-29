@@ -11,7 +11,19 @@ ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 
-RUN apk update && apk upgrade && apk --no-cache add bash git ca-certificates wget curl openssh make && \
+RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+    # DEPENDENCIES #############################################################
+    apk update && \
+    apk upgrade && \
+    apk --no-cache add \
+        bash \
+        git \
+        ca-certificates \
+        curl \
+        openssh \
+        tzdata \
+        make \
+        gnu-libiconv@edge && \
     # PHP ######################################################################
     apk --no-cache add \
         php5 \

@@ -1,6 +1,4 @@
-FROM dockette/alpine:3.9
-
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+FROM dockette/alpine:3.10
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 ADD conf/ci.ini /etc/php7/conf.d/999-ci.ini
@@ -15,7 +13,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "@php https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories && \
+    echo "@php https://dl.bintray.com/php-alpine/v3.10/php-7.4" >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -39,7 +37,6 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         php7-ctype@php \
         php7-curl@php \
         php7-dom@php \
-        #php7-fileinfo@php \
         php7-exif@php \
         php7-gettext@php \
         php7-gd@php \
@@ -61,16 +58,12 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         php7-pgsql@php \
         php7-posix@php \
         php7-session@php \
-        #php7-simplexml@php \
         php7-soap@php \
         php7-sodium@php \
         php7-sqlite3@php \
-        #php7-tokenizer@php \
         php7-xdebug@php \
         php7-xml@php \
-        #php7-xmlrpc@php \
         php7-xmlreader@php \
-        #php7-xmlwriter@php \
         php7-xsl@php \
         php7-zip@php && \
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/00_xdebug.ini && \
