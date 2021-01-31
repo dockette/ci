@@ -60,15 +60,16 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         php5-xmlrpc \
         php5-xmlreader \
         php5-xsl \
-        php5-zip && \
+        php5-zip \
+        php5-zlib && \
         sed -i -- 's/zend/;zend/g' /etc/php5/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR --filename=composer && \
     # MONGO ####################################################################
-    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-php5-mongo/master/sgerrand.rsa.pub && \
-    wget https://github.com/sgerrand/alpine-pkg-php5-mongo/releases/download/1.16.4-r0/php5-mongo-1.6.14-r0.apk && \
+    curl -sL https://raw.githubusercontent.com/sgerrand/alpine-pkg-php5-mongo/master/sgerrand.rsa.pub --output /etc/apk/keys/sgerrand.rsa.pub  && \
+    curl -sL https://github.com/sgerrand/alpine-pkg-php5-mongo/releases/download/1.16.4-r0/php5-mongo-1.6.14-r0.apk --output php5-mongo-1.6.14-r0.apk && \
     apk add php5-mongo-1.6.14-r0.apk && \
     # CLEAN UP #################################################################
     apk del wget && \
