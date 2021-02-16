@@ -64,7 +64,8 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         php8-xml@php \
         php8-xmlreader@php \
         php8-xsl@php \
-        php8-zip@php && \
+        php8-zip@php \
+        php8-zlib@php && \
         sed -i -- 's/zend/;zend/g' /etc/php8/conf.d/00_xdebug.ini && \
         echo "php -dzend_extension=xdebug \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
