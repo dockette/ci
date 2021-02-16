@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.10
+FROM dockette/alpine:3.12
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 ADD conf/ci.ini /etc/php7/conf.d/999-ci.ini
