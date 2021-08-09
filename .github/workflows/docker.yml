@@ -1,0 +1,93 @@
+name: Docker
+
+on:
+  push:
+    branches: master
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - context: ./node6
+            tag: node6
+
+          - context: ./node7
+            tag: node7
+
+          - context: ./node8
+            tag: node8
+
+          - context: ./node9
+            tag: node9
+
+          - context: ./node10
+            tag: node10
+
+          - context: ./node11
+            tag: node11
+
+          - context: ./node12
+            tag: node12
+
+          - context: ./node13
+            tag: node13
+
+          - context: ./node14
+            tag: node14
+
+          - context: ./node15
+            tag: node15
+
+          - context: ./node16
+            tag: node16
+
+          - context: ./php56
+            tag: php56
+
+          - context: ./php70
+            tag: php70
+
+          - context: ./php71
+            tag: php71
+
+          - context: ./php72
+            tag: php72
+
+          - context: ./php73
+            tag: php73
+
+          - context: ./php74
+            tag: php74
+
+          - context: ./php80
+            tag: php80
+
+      fail-fast: false
+
+    name: Docker (dockette/ci:${{ matrix.tag }})
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.context  }}
+          push: true
+          tags: dockette/ci:${{ matrix.tag }}
+          platforms: linux/amd64,linux/arm64
