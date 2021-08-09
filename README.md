@@ -59,6 +59,7 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS          | OS           | Tag           | Dockerfile                                                                 |
 |-----------------|--------------|---------------|----------------------------------------------------------------------------|
+| NodeJS 16       | Alpine v3.13 | node16        | [Dockerfile](https://github.com/dockette/ci/blob/master/node16/Dockerfile)  |
 | NodeJS 15       | Alpine v3.12 | node15        | [Dockerfile](https://github.com/dockette/ci/blob/master/node15/Dockerfile)  |
 | NodeJS 14       | Alpine v3.12 | node14        | [Dockerfile](https://github.com/dockette/ci/blob/master/node14/Dockerfile)  |
 | NodeJS 13       | Alpine v3.11 | node13        | [Dockerfile](https://github.com/dockette/ci/blob/master/node13/Dockerfile)  |
