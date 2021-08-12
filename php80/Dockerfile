@@ -29,6 +29,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
     # PHP ######################################################################
     apk --no-cache add \
         php8@community \
+        php8-pecl-apcu@community \
         php8-bcmath@community \
         php8-bz2@community \
         php8-calendar@community \
@@ -45,6 +46,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php8-intl@community \
         php8-ldap@community \
         php8-mbstring@community \
+        php8-pecl-mcrypt@community \
         php8-pecl-memcached@community \
         php8-mysqli@community \
         php8-mysqlnd@community \

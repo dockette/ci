@@ -46,7 +46,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php7-json@community \
         php7-ldap@community \
         php7-mbstring@community \
-        php7-mcrypt@community \
+        php7-pecl-mcrypt@community \
         php7-memcached@community \
         php7-mysqli@community \
         php7-mysqlnd@community \
