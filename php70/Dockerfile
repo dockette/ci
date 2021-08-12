@@ -1,6 +1,6 @@
 FROM dockette/alpine:3.5
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
 ADD conf/ci.ini /etc/php7/conf.d/
 
@@ -13,7 +13,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/apk/repositories && \
-    echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+    echo '@v310 http://nl.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -25,7 +25,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/ap
         openssh \
         tzdata \
         make \
-        gnu-libiconv@edge && \
+        gnu-libiconv@v310 && \
     # PHP ######################################################################
     apk --no-cache add \
         php7 \

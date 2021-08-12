@@ -1,12 +1,10 @@
-FROM dockette/alpine:3.8
+FROM dockette/alpine:3.9
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
-ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-ADD conf/ci.ini /etc/php7/conf.d/999-ci.ini
+ADD conf/ci.ini /etc/php7/conf.d/
 
 ENV PHP_DIR=/usr/bin
-ENV PHP7_BIN=$PHP_DIR/php7
 ENV PHP_BIN=$PHP_DIR/php
 ENV PHPXD_BIN=$PHP_DIR/phpxd
 ENV COMPOSER_DIR=/usr/bin/
@@ -14,8 +12,8 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "@php https://dl.bintray.com/php-alpine/v3.8/php-7.2" >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories && \
+    echo '@v310 http://nl.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -27,51 +25,56 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         openssh \
         tzdata \
         make \
-        gnu-libiconv@edge && \
+        gnu-libiconv@v310 && \
     # PHP ######################################################################
     apk --no-cache add \
-        php7@php \
-        php7-apcu@php \
-        php7-bcmath@php \
-        php7-bz2@php \
-        php7-calendar@php \
-        php7-cgi@php \
-        php7-ctype@php \
-        php7-curl@php \
-        php7-dom@php \
-        php7-exif@php \
-        php7-gettext@php \
-        php7-gd@php \
-        php7-iconv@php \
-        php7-imap@php \
-        php7-intl@php \
-        php7-json@php \
-        php7-ldap@php \
-        php7-mbstring@php \
-        php7-mysqli@php \
-        php7-mysqlnd@php \
-        php7-openssl@php \
-        php7-pdo@php \
-        php7-pdo_mysql@php \
-        php7-pdo_pgsql@php \
-        php7-pdo_sqlite@php \
-        php7-phar@php \
-        php7-pgsql@php \
-        php7-posix@php \
-        php7-session@php \
-        php7-soap@php \
-        php7-sodium@php \
-        php7-sqlite3@php \
-        php7-xdebug@php \
-        php7-xml@php \
-        php7-xmlreader@php \
-        php7-xsl@php \
-        php7-zip@php \
-        php7-zlib@php && \
-        sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/00_xdebug.ini && \
-        echo "php -dzend_extension=xdebug \$@" >> $PHPXD_BIN && \
+        php7@community \
+        php7-apcu@community \
+        php7-bcmath@community \
+        php7-bz2@community \
+        php7-calendar@community \
+        php7-cgi@community \
+        php7-ctype@community \
+        php7-curl@community \
+        php7-dom@community \
+        php7-exif@community \
+        php7-fileinfo@community \
+        php7-gd@community \
+        php7-gettext@community \
+        php7-iconv@community \
+        php7-imap@community \
+        php7-intl@community \
+        php7-json@community \
+        php7-ldap@community \
+        php7-mbstring@community \
+        php7-mcrypt@community \
+        php7-memcached@community \
+        php7-mysqli@community \
+        php7-mysqlnd@community \
+        php7-openssl@community \
+        php7-pdo_mysql@community \
+        php7-pdo_pgsql@community \
+        php7-pdo_sqlite@community \
+        php7-pdo@community \
+        php7-pgsql@community \
+        php7-phar@community \
+        php7-posix@community \
+        php7-session@community \
+        php7-simplexml@community \
+        php7-soap@community \
+        php7-sqlite3@community \
+        php7-tokenizer@community \
+        php7-xdebug@community \
+        php7-xml@community \
+        php7-xmlreader@community \
+        php7-xmlrpc@community \
+        php7-xmlwriter@community \
+        php7-xsl@community \
+        php7-zip@community \
+        php7-zlib@community && \
+        sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
+        echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
-        ln -s /usr/bin/php7 /usr/bin/php && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################

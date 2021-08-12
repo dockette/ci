@@ -1,19 +1,19 @@
-FROM dockette/alpine:3.12
+FROM dockette/alpine:3.14
 
-ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-ADD conf/ci.ini /etc/php8/conf.d/999-ci.ini
+LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
+
+ADD conf/ci.ini /etc/php8/conf.d/
 
 ENV PHP_DIR=/usr/bin
-ENV PHP8_BIN=$PHP_DIR/php8
 ENV PHP_BIN=$PHP_DIR/php
+ENV PHP8_BIN=$PHP_DIR/php8
 ENV PHPXD_BIN=$PHP_DIR/phpxd
 ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "@php https://dl.bintray.com/php-alpine/v3.12/php-8.0" >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -25,51 +25,53 @@ RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/rep
         openssh \
         tzdata \
         make \
-        gnu-libiconv@edge && \
+        gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
-        php8@php \
-        php8-apcu@php \
-        php8-bcmath@php \
-        php8-bz2@php \
-        php8-calendar@php \
-        php8-cgi@php \
-        php8-ctype@php \
-        php8-curl@php \
-        php8-dom@php \
-        php8-exif@php \
-        php8-gettext@php \
-        php8-gd@php \
-        php8-iconv@php \
-        php8-imap@php \
-        php8-intl@php \
-        php8-ldap@php \
-        php8-mbstring@php \
-        php8-mysqli@php \
-        php8-mysqlnd@php \
-        php8-openssl@php \
-        php8-pdo@php \
-        php8-pdo_mysql@php \
-        php8-pdo_pgsql@php \
-        php8-pdo_sqlite@php \
-        php8-phar@php \
-        php8-phpdbg@php \
-        php8-pgsql@php \
-        php8-posix@php \
-        php8-session@php \
-        php8-soap@php \
-        php8-sodium@php \
-        php8-sqlite3@php \
-        php8-xdebug@php \
-        php8-xml@php \
-        php8-xmlreader@php \
-        php8-xsl@php \
-        php8-zip@php \
-        php8-zlib@php && \
-        sed -i -- 's/zend/;zend/g' /etc/php8/conf.d/00_xdebug.ini && \
-        echo "php -dzend_extension=xdebug \$@" >> $PHPXD_BIN && \
+        php8@community \
+        php8-bcmath@community \
+        php8-bz2@community \
+        php8-calendar@community \
+        php8-cgi@community \
+        php8-ctype@community \
+        php8-curl@community \
+        php8-dom@community \
+        php8-exif@community \
+        php8-fileinfo@community \
+        php8-gd@community \
+        php8-gettext@community \
+        php8-iconv@community \
+        php8-imap@community \
+        php8-intl@community \
+        php8-ldap@community \
+        php8-mbstring@community \
+        php8-pecl-memcached@community \
+        php8-mysqli@community \
+        php8-mysqlnd@community \
+        php8-openssl@community \
+        php8-pdo_mysql@community \
+        php8-pdo_pgsql@community \
+        php8-pdo_sqlite@community \
+        php8-pdo@community \
+        php8-pgsql@community \
+        php8-phar@community \
+        php8-posix@community \
+        php8-session@community \
+        php8-simplexml@community \
+        php8-soap@community \
+        php8-sqlite3@community \
+        php8-tokenizer@community \
+        php8-xdebug@community \
+        php8-xml@community \
+        php8-xmlreader@community \
+        php8-xmlwriter@community \
+        php8-xsl@community \
+        php8-zip@community \
+        php8-zlib@community && \
+        sed -i -- 's/zend/;zend/g' /etc/php8/conf.d/50_xdebug.ini && \
+        echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
-        ln -s /usr/bin/php8 /usr/bin/php && \
+        ln -s $PHP8_BIN $PHP_BIN && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################
