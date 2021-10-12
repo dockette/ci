@@ -61,6 +61,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php8-session@community \
         php8-simplexml@community \
         php8-soap@community \
+        php8-sodium@community \
         php8-sqlite3@community \
         php8-tokenizer@community \
         php8-xdebug@community \
