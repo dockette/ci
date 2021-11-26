@@ -74,9 +74,23 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.12/community' >> /etc/a
         sed -i -- 's/zend/;zend/g' /etc/php7/conf.d/xdebug.ini && \
         echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
+    apk add --no-cache \
+        gcc \
+        php7-dev@community \
+        php7-pear@community \
+        zlib-dev \
+        musl-dev && \
+    pecl install memcache-4.0.5.2 && \
+    echo "extension=memcache.so" >> /etc/php7/conf.d/20_memcache.ini && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################
-    rm -rf /var/cache/apk/*
+    apk del \
+        gcc \
+        php7-dev \
+        php7-pear \
+        zlib-dev \
+        musl-dev && \
+    rm -rf /var/cache/apk/* /tmp/*
 
 CMD php -v

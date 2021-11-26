@@ -47,6 +47,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php7-ldap@community \
         php7-mbstring@community \
         php7-pecl-mcrypt@community \
+        php7-memcache@community \
         php7-memcached@community \
         php7-mysqli@community \
         php7-mysqlnd@community \
@@ -78,6 +79,6 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* /tmp/*
 
 CMD php
