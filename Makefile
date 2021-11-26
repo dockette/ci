@@ -30,7 +30,10 @@ build-node-7:
 build-node-6:
 	docker build -t node6 ./node6
 
-build-php: build-php-80 build-php-74 build-php-73 build-php-72 build-php-71 build-php-70 build-php-56
+build-php: build-php-81 build-php-80 build-php-74 build-php-73 build-php-72 build-php-71 build-php-70 build-php-56
+
+build-php-81:
+	docker build -t php81 ./php81
 
 build-php-80:
 	docker build -t php80 ./php80

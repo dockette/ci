@@ -64,6 +64,9 @@ jobs:
           - context: ./php80
             tag: php80
 
+          - context: ./php81
+            tag: php81
+
       fail-fast: false
 
     name: Docker (dockette/ci:${{ matrix.tag }})
