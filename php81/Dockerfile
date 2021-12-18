@@ -47,7 +47,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php81-intl@testing \
         php81-ldap@testing \
         php81-mbstring@testing \
-        php8-pecl-memcache@community \
+        php81-pecl-memcache@testing \
         php81-pecl-memcached@testing \
         php81-mysqli@testing \
         php81-mysqlnd@testing \
