@@ -52,6 +52,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php8-mysqli@community \
         php8-mysqlnd@community \
         php8-openssl@community \
+        php8-pcntl@community \
         php8-pdo_mysql@community \
         php8-pdo_pgsql@community \
         php8-pdo_sqlite@community \
