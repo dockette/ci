@@ -52,6 +52,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php81-mysqli@testing \
         php81-mysqlnd@testing \
         php81-openssl@testing \
+        php81-pcntl@testing \
         php81-pdo_mysql@testing \
         php81-pdo_pgsql@testing \
         php81-pdo_sqlite@testing \
