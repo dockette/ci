@@ -24,6 +24,7 @@
 
 | PHP      | OS           | Tag    | Dockerfile                                                                 |
 |----------|--------------|--------|----------------------------------------------------------------------------|
+| PHP 8.1  | Alpine v3.12 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php81/Dockerfile)  |
 | PHP 8.0  | Alpine v3.12 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php80/Dockerfile)  |
 | PHP 7.4  | Alpine v3.10 | php74  | [Dockerfile](https://github.com/dockette/ci/blob/master/php74/Dockerfile)  |
 | PHP 7.3  | Alpine v3.9  | php73  | [Dockerfile](https://github.com/dockette/ci/blob/master/php73/Dockerfile)  |
@@ -46,6 +47,7 @@ All PHP images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php81
 docker run -it --rm -v $(pwd):/srv dockette/ci:php80
 docker run -it --rm -v $(pwd):/srv dockette/ci:php74
 docker run -it --rm -v $(pwd):/srv dockette/ci:php73
