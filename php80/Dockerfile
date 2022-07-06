@@ -60,6 +60,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php8-pgsql@community \
         php8-phar@community \
         php8-posix@community \
+        php8-redis@community \
         php8-session@community \
         php8-simplexml@community \
         php8-soap@community \

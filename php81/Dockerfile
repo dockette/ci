@@ -60,6 +60,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php81-pgsql@testing \
         php81-phar@testing \
         php81-posix@testing \
+        php81-redis@testing \
         php81-session@testing \
         php81-simplexml@testing \
         php81-soap@testing \

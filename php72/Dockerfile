@@ -59,6 +59,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.9/community' >> /etc/ap
         php7-pgsql@community \
         php7-phar@community \
         php7-posix@community \
+        php7-redis@community \
         php7-session@community \
         php7-simplexml@community \
         php7-soap@community \
