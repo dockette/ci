@@ -12,8 +12,8 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@community http://nl.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories && \
-    echo '@v310 http://nl.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
+RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories && \
+    echo '@v310 http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \

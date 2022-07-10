@@ -11,8 +11,8 @@ ENV COMPOSER_DIR=/usr/bin/
 ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 
-RUN echo '@v310 http://nl.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
-    echo '@v35 http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/apk/repositories && \
+RUN echo '@v310 http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
+    echo '@v35 http://dl-cdn.alpinelinux.org/alpine/v3.5/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
