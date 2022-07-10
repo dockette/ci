@@ -43,6 +43,7 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         php81-gd@testing \
         php81-gettext@testing \
         php81-iconv@testing \
+        php81-imagick@testing \
         php81-imap@testing \
         php81-intl@testing \
         php81-ldap@testing \

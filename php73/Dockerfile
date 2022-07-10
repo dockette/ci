@@ -41,6 +41,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.12/community' >> /etc/a
         php7-gd@community \
         php7-gettext@community \
         php7-iconv@community \
+        php7-imagick@community \
         php7-imap@community \
         php7-intl@community \
         php7-json@community \

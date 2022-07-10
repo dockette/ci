@@ -42,6 +42,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php8-gd@community \
         php8-gettext@community \
         php8-iconv@community \
+        php8-imagick@community \
         php8-imap@community \
         php8-intl@community \
         php8-ldap@community \
