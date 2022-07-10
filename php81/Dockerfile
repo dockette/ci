@@ -1,4 +1,4 @@
-FROM dockette/alpine:edge
+FROM dockette/alpine:3.16
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
@@ -13,8 +13,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-    echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/v3.16/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -26,55 +25,55 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
         openssh \
         tzdata \
         make \
-        gnu-libiconv@testing && \
+        gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
-        php81@testing \
-        php81-pecl-apcu@testing \
-        php81-bcmath@testing \
-        php81-bz2@testing \
-        php81-calendar@testing \
-        php81-cgi@testing \
-        php81-ctype@testing \
-        php81-curl@testing \
-        php81-dom@testing \
-        php81-exif@testing \
-        php81-fileinfo@testing \
-        php81-gd@testing \
-        php81-gettext@testing \
-        php81-iconv@testing \
-        php81-imagick@testing \
-        php81-imap@testing \
-        php81-intl@testing \
-        php81-ldap@testing \
-        php81-mbstring@testing \
-        php81-pecl-memcache@testing \
-        php81-pecl-memcached@testing \
-        php81-mysqli@testing \
-        php81-mysqlnd@testing \
-        php81-openssl@testing \
-        php81-pcntl@testing \
-        php81-pdo_mysql@testing \
-        php81-pdo_pgsql@testing \
-        php81-pdo_sqlite@testing \
-        php81-pdo@testing \
-        php81-pgsql@testing \
-        php81-phar@testing \
-        php81-posix@testing \
-        php81-redis@testing \
-        php81-session@testing \
-        php81-simplexml@testing \
-        php81-soap@testing \
-        php81-sodium@testing \
-        php81-sqlite3@testing \
-        php81-tokenizer@testing \
-        php81-xdebug@testing \
-        php81-xml@testing \
-        php81-xmlreader@testing \
-        php81-xmlwriter@testing \
-        php81-xsl@testing \
-        php81-zip@testing \
-        php81-zlib@testing && \
+        php81@community \
+        php81-pecl-apcu@community \
+        php81-bcmath@community \
+        php81-bz2@community \
+        php81-calendar@community \
+        php81-cgi@community \
+        php81-ctype@community \
+        php81-curl@community \
+        php81-dom@community \
+        php81-exif@community \
+        php81-fileinfo@community \
+        php81-gd@community \
+        php81-gettext@community \
+        php81-iconv@community \
+        php81-pecl-imagick@community \
+        php81-imap@community \
+        php81-intl@community \
+        php81-ldap@community \
+        php81-mbstring@community \
+        php81-pecl-memcache@community \
+        php81-pecl-memcached@community \
+        php81-mysqli@community \
+        php81-mysqlnd@community \
+        php81-openssl@community \
+        php81-pcntl@community \
+        php81-pdo_mysql@community \
+        php81-pdo_pgsql@community \
+        php81-pdo_sqlite@community \
+        php81-pdo@community \
+        php81-pgsql@community \
+        php81-phar@community \
+        php81-posix@community \
+        php81-redis@community \
+        php81-session@community \
+        php81-simplexml@community \
+        php81-soap@community \
+        php81-sodium@community \
+        php81-sqlite3@community \
+        php81-tokenizer@community \
+        php81-xdebug@community \
+        php81-xml@community \
+        php81-xmlreader@community \
+        php81-xmlwriter@community \
+        php81-xsl@community \
+        php81-zip@community \
+        php81-zlib@community && \
         sed -i -- 's/zend/;zend/g' /etc/php81/conf.d/50_xdebug.ini && \
         echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
