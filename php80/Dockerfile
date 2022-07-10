@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.14
+FROM dockette/alpine:3.15
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
@@ -13,7 +13,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
+RUN echo '@community http://nl.alpinelinux.org/alpine/v3.15/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -42,7 +42,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/v3.14/community' >> /etc/a
         php8-gd@community \
         php8-gettext@community \
         php8-iconv@community \
-        php8-imagick@community \
+        php8-pecl-imagick@community \
         php8-imap@community \
         php8-intl@community \
         php8-ldap@community \
