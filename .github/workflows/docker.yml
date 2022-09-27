@@ -43,6 +43,12 @@ jobs:
           - context: ./node16
             tag: node16
 
+          - context: ./node17
+            tag: node17
+
+          - context: ./node18
+            tag: node18
+
           - context: ./php56
             tag: php56
 

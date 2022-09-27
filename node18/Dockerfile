@@ -1,8 +1,8 @@
-FROM dockette/alpine:3.14
+FROM dockette/alpine:3.16
 
-ENV NODEJS_VERSION=16.11.1
+ENV NODEJS_VERSION=18.9.1
 
-RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
+RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.16/community' >> /etc/apk/repositories && \
     apk update && apk upgrade && \
     # DEPENDENCIES #############################################################
     apk add --update bash git ca-certificates curl openssh tzdata make && \
