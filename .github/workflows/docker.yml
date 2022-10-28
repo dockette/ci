@@ -2,7 +2,7 @@ name: Docker
 
 on:
   push:
-    branches: master
+    branches: [master]
 
 jobs:
   docker:
@@ -10,72 +10,36 @@ jobs:
     strategy:
       matrix:
         include:
-          - context: ./node6
-            tag: node6
-
-          - context: ./node7
-            tag: node7
-
-          - context: ./node8
-            tag: node8
-
-          - context: ./node9
-            tag: node9
-
-          - context: ./node10
-            tag: node10
-
-          - context: ./node11
-            tag: node11
-
-          - context: ./node12
-            tag: node12
-
-          - context: ./node13
-            tag: node13
-
-          - context: ./node14
-            tag: node14
-
-          - context: ./node15
-            tag: node15
-
-          - context: ./node16
-            tag: node16
-
-          - context: ./node17
-            tag: node17
-
-          - context: ./node18
-            tag: node18
-
-          - context: ./php56
-            tag: php56
-
-          - context: ./php70
-            tag: php70
-
-          - context: ./php71
-            tag: php71
-
-          - context: ./php72
-            tag: php72
-
-          - context: ./php73
-            tag: php73
-
-          - context: ./php74
-            tag: php74
-
-          - context: ./php80
-            tag: php80
-
-          - context: ./php81
-            tag: php81
+          # Node
+          - image: node6
+          - image: node7
+          - image: node8
+          - image: node9
+          - image: node10
+          - image: node11
+          - image: node12
+          - image: node13
+          - image: node14
+          - image: node15
+          - image: node16
+          - image: node17
+          - image: node18
+          # PHP
+          - image: php56
+          - image: php70
+          - image: php71
+          - image: php72
+          - image: php73
+          - image: php74
+          - image: php80
+          - image: php81
+          # Ansitest
+          - image: ansitest
+            platforms: linux/amd64
 
       fail-fast: false
 
-    name: Docker (dockette/ci:${{ matrix.tag }})
+    name: Docker (dockette/ci:${{ matrix.image }})
 
     steps:
       - name: Checkout
@@ -96,7 +60,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ${{ matrix.context  }}
+          context: ${{ matrix.image }}
           push: true
-          tags: dockette/ci:${{ matrix.tag }}
-          platforms: linux/amd64,linux/arm64
+          tags: dockette/ci:${{ matrix.image }}
+          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm64' }}

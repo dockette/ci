@@ -61,6 +61,8 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS          | OS           | Tag           | Dockerfile                                                                 |
 |-----------------|--------------|---------------|----------------------------------------------------------------------------|
+| NodeJS 18       | Alpine v3.16 | node18        | [Dockerfile](https://github.com/dockette/ci/blob/master/node18/Dockerfile)  |
+| NodeJS 17       | Alpine v3.16 | node17        | [Dockerfile](https://github.com/dockette/ci/blob/master/node17/Dockerfile)  |
 | NodeJS 16       | Alpine v3.13 | node16        | [Dockerfile](https://github.com/dockette/ci/blob/master/node16/Dockerfile)  |
 | NodeJS 15       | Alpine v3.12 | node15        | [Dockerfile](https://github.com/dockette/ci/blob/master/node15/Dockerfile)  |
 | NodeJS 14       | Alpine v3.12 | node14        | [Dockerfile](https://github.com/dockette/ci/blob/master/node14/Dockerfile)  |
@@ -97,6 +99,13 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:node8
 docker run -it --rm -v $(pwd):/srv dockette/ci:node7
 docker run -it --rm -v $(pwd):/srv dockette/ci:node6
 ```
+
+### Ansitest
+
+| Tools                          | OS           | Tag           | Dockerfile                                                                 |
+|--------------------------------|--------------|---------------|----------------------------------------------------------------------------|
+| Ansible, Vagrant, Docker       | Debian 11    | ansitest      | [Dockerfile](https://github.com/dockette/ci/blob/master/ansitest/Dockerfile)  |
+
 
 -----
 

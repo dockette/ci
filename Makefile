@@ -1,57 +1,30 @@
-build-node: build-node-15 build-node-14 build-node-13 build-node-12 build-node-11 build-node-10 build-node-9 build-node-8 build-node-7 build-node-6
+DOCKER_IMAGE=dockette/ci
 
-build-node-15:
-	docker build -t node15 ./node15
+_docker-build-%: VERSION=$*
+_docker-build-%:
+	docker build \
+		--pull \
+		-t ${DOCKER_IMAGE}:${VERSION} \
+		./${VERSION}
 
-build-node-14:
-	docker build -t node14 ./node14
+build-php-5.6: _docker-build-php56
+build-php-7.0: _docker-build-php70
+build-php-7.1: _docker-build-php71
+build-php-7.2: _docker-build-php72
+build-php-7.3: _docker-build-php73
+build-php-7.4: _docker-build-php74
+build-php-8.0: _docker-build-php80
+build-php-8.1: _docker-build-php81
 
-build-node-13:
-	docker build -t node13 ./node13
+build-node9: _docker-build-node9
+build-node10: _docker-build-node10
+build-node11: _docker-build-node11
+build-node12: _docker-build-node12
+build-node13: _docker-build-node13
+build-node14: _docker-build-node14
+build-node15: _docker-build-node15
+build-node16: _docker-build-node16
+build-node17: _docker-build-node17
+build-node18: _docker-build-node18
 
-build-node-12:
-	docker build -t node12 ./node12
-
-build-node-11:
-	docker build -t node11 ./node11
-
-build-node-10:
-	docker build -t node10 ./node10
-
-build-node-9:
-	docker build -t node9 ./node9
-
-build-node-8:
-	docker build -t node8 ./node8
-
-build-node-7:
-	docker build -t node7 ./node7
-
-build-node-6:
-	docker build -t node6 ./node6
-
-build-php: build-php-81 build-php-80 build-php-74 build-php-73 build-php-72 build-php-71 build-php-70 build-php-56
-
-build-php-81:
-	docker build -t php81 ./php81
-
-build-php-80:
-	docker build -t php80 ./php80
-
-build-php-74:
-	docker build -t php74 ./php74
-
-build-php-73:
-	docker build -t php73 ./php73
-
-build-php-72:
-	docker build -t php72 ./php72
-
-build-php-71:
-	docker build -t php71 ./php71
-
-build-php-70:
-	docker build -t php70 ./php70
-
-build-php-56:
-	docker build -t php56 ./php56
+build-ansitest: _docker-build-ansitest
