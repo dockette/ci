@@ -6,14 +6,15 @@ LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 RUN apt update && \
     apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
-        software-properties-common \
-        git \
-        wget \
-        curl \
-        gnupg2 \
         ansible \
+        curl \
+        direnv \
+        git \
+        gnupg2 \
         make \
-        vagrant && \
+        software-properties-common \
+        vagrant \
+        wget && \
     # CLEAN UP #################################################################
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable" && \
