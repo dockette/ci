@@ -33,6 +33,7 @@ jobs:
           - image: php74
           - image: php80
           - image: php81
+          - image: php82
           # Ansitest
           - image: ansitest
 
