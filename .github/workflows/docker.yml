@@ -35,7 +35,6 @@ jobs:
           - image: php81
           # Ansitest
           - image: ansitest
-            platforms: linux/amd64
 
       fail-fast: false
 
