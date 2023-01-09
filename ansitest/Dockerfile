@@ -23,7 +23,7 @@ RUN apt update && \
     apt update && \
     apt install -y ansible && \
     pip3 install ansible-lint yamllint molecule molecule-docker && \
-    ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections community.docker -U && \
+    ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections community.docker ansible.utils -U && \
     # CLEAN UP #################################################################
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     add-apt-repository "deb [arch=${TARGETARCH}] https://download.docker.com/linux/debian bullseye stable" && \
