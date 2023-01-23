@@ -2,7 +2,9 @@ DOCKER_IMAGE=dockette/ci
 
 _docker-build-%: VERSION=$*
 _docker-build-%:
-	docker build \
+	docker buildx \
+		build \
+		--platform linux/amd64,linux/arm64 \
 		--pull \
 		-t ${DOCKER_IMAGE}:${VERSION} \
 		./${VERSION}
