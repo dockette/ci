@@ -13,18 +13,22 @@ RUN apt update && \
         git \
         gnupg2 \
         make \
-        software-properties-common \
-        vagrant \
         python3 \
         python3-pip \
+        rsync \
+        software-properties-common \
+        vagrant \
         wget && \
     echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list.d/ansible.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     apt update && \
     apt install -y ansible && \
-    pip3 install ansible-lint yamllint molecule molecule-docker && \
-    ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections community.docker ansible.utils -U && \
-    # CLEAN UP #################################################################
+    python3 -m pip install --user ansible-lint yamllint molecule molecule-plugins[docker] && \
+    ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections -U \
+        ansible.utils \
+        ansible.posix \
+        community.docker && \
+    # DOCKER ###################################################################
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     add-apt-repository "deb [arch=${TARGETARCH}] https://download.docker.com/linux/debian bullseye stable" && \
     apt update && \
