@@ -23,7 +23,7 @@ RUN apt update && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     apt update && \
     apt install -y ansible && \
-    python3 -m pip install --user ansible-lint yamllint molecule molecule-plugins[docker] && \
+    pip3 install ansible-lint yamllint molecule molecule-plugins[docker]  && \
     ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections -U \
         ansible.utils \
         ansible.posix \
