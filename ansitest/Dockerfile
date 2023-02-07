@@ -27,6 +27,7 @@ RUN apt update && \
     ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections -U \
         ansible.utils \
         ansible.posix \
+        community.general \
         community.docker && \
     # DOCKER ###################################################################
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
