@@ -2,8 +2,8 @@
 
 <p align=center>
     :green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux 
-    for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0
-    and Node.js 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+    for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2
+    and Node.js 10, 11, 12, 13, 14, 15, 16, 17, 18
 </p>
 
 <p align=center>
@@ -24,8 +24,8 @@
 
 | PHP      | OS           | Tag    | Dockerfile                                                                 |
 |----------|--------------|--------|----------------------------------------------------------------------------|
-| PHP 8.2  | Alpine v3.17 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php82/Dockerfile)  |
-| PHP 8.1  | Alpine v3.16 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php81/Dockerfile)  |
+| PHP 8.2  | Alpine v3.17 | php82  | [Dockerfile](https://github.com/dockette/ci/blob/master/php82/Dockerfile)  |
+| PHP 8.1  | Alpine v3.16 | php81  | [Dockerfile](https://github.com/dockette/ci/blob/master/php81/Dockerfile)  |
 | PHP 8.0  | Alpine v3.12 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php80/Dockerfile)  |
 | PHP 7.4  | Alpine v3.10 | php74  | [Dockerfile](https://github.com/dockette/ci/blob/master/php74/Dockerfile)  |
 | PHP 7.3  | Alpine v3.9  | php73  | [Dockerfile](https://github.com/dockette/ci/blob/master/php73/Dockerfile)  |
@@ -72,10 +72,6 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 | NodeJS 12       | Alpine v3.12 | node12        | [Dockerfile](https://github.com/dockette/ci/blob/master/node12/Dockerfile)  |
 | NodeJS 11       | Alpine v3.9  | node11        | [Dockerfile](https://github.com/dockette/ci/blob/master/node11/Dockerfile)  |
 | NodeJS 10       | Alpine v3.10 | node10        | [Dockerfile](https://github.com/dockette/ci/blob/master/node10/Dockerfile)  |
-| NodeJS 9        | Alpine v3.8  | node9         | [Dockerfile](https://github.com/dockette/ci/blob/master/node9/Dockerfile)  |
-| NodeJS 8        | Alpine v3.8  | node8         | [Dockerfile](https://github.com/dockette/ci/blob/master/node8/Dockerfile)  |
-| NodeJS 7        | Alpine v3.6  | node7         | [Dockerfile](https://github.com/dockette/ci/blob/master/node7/Dockerfile)  |
-| NodeJS 6        | Alpine v3.6  | node6         | [Dockerfile](https://github.com/dockette/ci/blob/master/node6/Dockerfile)  |
 
 All Nodejs images have a few preinstalled packages:
 
@@ -90,16 +86,15 @@ All Nodejs images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:node18
+docker run -it --rm -v $(pwd):/srv dockette/ci:node17
+docker run -it --rm -v $(pwd):/srv dockette/ci:node16
 docker run -it --rm -v $(pwd):/srv dockette/ci:node15
 docker run -it --rm -v $(pwd):/srv dockette/ci:node14
 docker run -it --rm -v $(pwd):/srv dockette/ci:node13
 docker run -it --rm -v $(pwd):/srv dockette/ci:node12
 docker run -it --rm -v $(pwd):/srv dockette/ci:node11
 docker run -it --rm -v $(pwd):/srv dockette/ci:node10
-docker run -it --rm -v $(pwd):/srv dockette/ci:node9
-docker run -it --rm -v $(pwd):/srv dockette/ci:node8
-docker run -it --rm -v $(pwd):/srv dockette/ci:node7
-docker run -it --rm -v $(pwd):/srv dockette/ci:node6
 ```
 
 ### Ansitest
