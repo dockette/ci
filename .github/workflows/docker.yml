@@ -1,66 +1,47 @@
-name: Docker
+name: "Docker"
 
 on:
   push:
-    branches: [master]
+    branches: ["master"]
+
+  schedule:
+    - cron: "0 8 * * 1"
 
 jobs:
-  docker:
-    runs-on: ubuntu-latest
+  build:
+    name: "Build"
+    uses: dockette/.github/.github/workflows/docker.yml@master
+    secrets: inherit
+    with:
+        image: "dockette/ci"
+        tag: "${{ matrix.item }}"
+        context: "${{ matrix.item }}"
     strategy:
       matrix:
         include:
           # Node
-          - image: node6
-          - image: node7
-          - image: node8
-          - image: node9
-          - image: node10
-          - image: node11
-          - image: node12
-          - image: node13
-          - image: node14
-          - image: node15
-          - image: node16
-          - image: node17
-          - image: node18
+          - item: node6
+          - item: node7
+          - item: node8
+          - item: node9
+          - item: node10
+          - item: node11
+          - item: node12
+          - item: node13
+          - item: node14
+          - item: node15
+          - item: node16
+          - item: node17
+          - item: node18
           # PHP
-          - image: php56
-          - image: php70
-          - image: php71
-          - image: php72
-          - image: php73
-          - image: php74
-          - image: php80
-          - image: php81
-          - image: php82
+          - item: php56
+          - item: php70
+          - item: php71
+          - item: php72
+          - item: php73
+          - item: php74
+          - item: php80
+          - item: php81
+          - item: php82
           # Ansitest
-          - image: ansitest
-
-      fail-fast: false
-
-    name: Docker (dockette/ci:${{ matrix.image }})
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: ${{ matrix.image }}
-          push: true
-          tags: dockette/ci:${{ matrix.image }}
-          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm64' }}
+          - item: ansitest
