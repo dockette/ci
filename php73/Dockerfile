@@ -2,7 +2,7 @@ FROM dockette/alpine:3.12
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
-ADD conf/ci.ini /etc/php7/conf.d/
+ADD conf/php.ini /etc/php7/conf.d/999-php.ini
 
 ENV PHP_DIR=/usr/bin
 ENV PHP_BIN=$PHP_DIR/php
