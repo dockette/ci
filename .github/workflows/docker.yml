@@ -45,3 +45,5 @@ jobs:
           - item: php82
           # Ansitest
           - item: ansitest
+
+      fail-fast: false
