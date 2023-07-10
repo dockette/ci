@@ -81,8 +81,6 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.7/community' >> /et
         php7-pear@community \
         zlib-dev \
         musl-dev && \
-    pecl install memcache-4.0.5.2 && \
-    echo "extension=memcache.so" >> /etc/php7/conf.d/20_memcache.ini && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################
