@@ -42,12 +42,12 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.18/community/' >> /
         php82-gd@community \
         php82-gettext@community \
         php82-iconv@community \
-        #php82-pecl-imagick@community \
+        php82-pecl-imagick@community \
         php82-imap@community \
         php82-intl@community \
         php82-ldap@community \
         php82-mbstring@community \
-        #php82-pecl-memcache@community \
+        php82-pecl-memcache@community \
         php82-pecl-memcached@community \
         php82-mysqli@community \
         php82-mysqlnd@community \
