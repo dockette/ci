@@ -11,4 +11,4 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.16/community' >> /e
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
-CMD nodejs
+CMD node
