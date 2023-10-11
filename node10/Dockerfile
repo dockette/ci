@@ -10,4 +10,4 @@ RUN apk update && apk upgrade && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
-CMD nodejs
+CMD node
