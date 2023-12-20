@@ -24,6 +24,7 @@ RUN echo '@v310 http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/ap
         openssh \
         tzdata \
         make \
+        direnv \
         gnu-libiconv@v310 && \
     # PHP ######################################################################
     apk --no-cache add \
