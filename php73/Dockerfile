@@ -13,6 +13,7 @@ ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
 RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.12/community' >> /etc/apk/repositories && \
+    echo '@v314 http://dl-cdn.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -24,7 +25,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.12/community' >> /e
         openssh \
         tzdata \
         make \
-        direnv \
+        direnv@v314 \
         gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \

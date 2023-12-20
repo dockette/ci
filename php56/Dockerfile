@@ -13,6 +13,7 @@ ENV TZ=Europe/Prague
 
 RUN echo '@v310 http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories && \
     echo '@v35 http://dl-cdn.alpinelinux.org/alpine/v3.5/community' >> /etc/apk/repositories && \
+    echo '@v314 http://dl-cdn.alpinelinux.org/alpine/v3.14/community' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -24,7 +25,7 @@ RUN echo '@v310 http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/ap
         openssh \
         tzdata \
         make \
-        direnv \
+        direnv@v314 \
         gnu-libiconv@v310 && \
     # PHP ######################################################################
     apk --no-cache add \
