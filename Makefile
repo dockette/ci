@@ -29,5 +29,6 @@ build-node15: _docker-build-node15
 build-node16: _docker-build-node16
 build-node17: _docker-build-node17
 build-node18: _docker-build-node18
+build-node19: _docker-build-node19
 
 build-ansitest: _docker-build-ansitest

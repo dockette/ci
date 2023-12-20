@@ -33,6 +33,7 @@ jobs:
           - item: node16
           - item: node17
           - item: node18
+          - item: node19
           # PHP
           - item: php56
           - item: php70
