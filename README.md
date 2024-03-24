@@ -24,6 +24,7 @@
 
 | PHP      | OS           | Tag    | Dockerfile                                                                 |
 |----------|--------------|--------|----------------------------------------------------------------------------|
+| PHP 8.3  | Alpine v3.19 | php83  | [Dockerfile](https://github.com/dockette/ci/blob/master/php83/Dockerfile)  |
 | PHP 8.2  | Alpine v3.17 | php82  | [Dockerfile](https://github.com/dockette/ci/blob/master/php82/Dockerfile)  |
 | PHP 8.1  | Alpine v3.16 | php81  | [Dockerfile](https://github.com/dockette/ci/blob/master/php81/Dockerfile)  |
 | PHP 8.0  | Alpine v3.12 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php80/Dockerfile)  |
@@ -48,6 +49,7 @@ All PHP images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php83
 docker run -it --rm -v $(pwd):/srv dockette/ci:php82
 docker run -it --rm -v $(pwd):/srv dockette/ci:php81
 docker run -it --rm -v $(pwd):/srv dockette/ci:php80
@@ -63,6 +65,8 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS          | OS           | Tag           | Dockerfile                                                                 |
 |-----------------|--------------|---------------|----------------------------------------------------------------------------|
+| NodeJS 21       | Alpine v3.19 | node21        | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
+| NodeJS 20       | Alpine v3.18 | node20        | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
 | NodeJS 19       | Alpine v3.17 | node19        | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
 | NodeJS 18       | Alpine v3.16 | node18        | [Dockerfile](https://github.com/dockette/ci/blob/master/node18/Dockerfile)  |
 | NodeJS 17       | Alpine v3.16 | node17        | [Dockerfile](https://github.com/dockette/ci/blob/master/node17/Dockerfile)  |
