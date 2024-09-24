@@ -79,4 +79,4 @@ RUN echo '@v310 http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/ap
     rm php5-mongo-1.6.16-r0.apk /etc/apk/keys/sgerrand.rsa.pub && \
     rm -rf /var/cache/apk/*
 
-CMD php
+CMD ["php"]

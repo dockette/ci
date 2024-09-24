@@ -84,4 +84,4 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.16/community/' >> /
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/* /tmp/*
 
-CMD php
+CMD ["php"]

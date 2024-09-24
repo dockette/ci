@@ -94,4 +94,4 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.7/community' >> /et
         musl-dev && \
     rm -rf /var/cache/apk/* /tmp/*
 
-CMD php
+CMD ["php"]
