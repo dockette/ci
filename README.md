@@ -63,30 +63,34 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 ### NodeJS
 
-| NodeJS          | OS           | Tag           | Dockerfile                                                                 |
-|-----------------|--------------|---------------|----------------------------------------------------------------------------|
-| NodeJS 21       | Alpine v3.19 | node21        | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 20       | Alpine v3.18 | node20        | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 19       | Alpine v3.17 | node19        | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 18       | Alpine v3.16 | node18        | [Dockerfile](https://github.com/dockette/ci/blob/master/node18/Dockerfile)  |
-| NodeJS 17       | Alpine v3.16 | node17        | [Dockerfile](https://github.com/dockette/ci/blob/master/node17/Dockerfile)  |
-| NodeJS 16       | Alpine v3.13 | node16        | [Dockerfile](https://github.com/dockette/ci/blob/master/node16/Dockerfile)  |
-| NodeJS 15       | Alpine v3.12 | node15        | [Dockerfile](https://github.com/dockette/ci/blob/master/node15/Dockerfile)  |
-| NodeJS 14       | Alpine v3.12 | node14        | [Dockerfile](https://github.com/dockette/ci/blob/master/node14/Dockerfile)  |
-| NodeJS 13       | Alpine v3.11 | node13        | [Dockerfile](https://github.com/dockette/ci/blob/master/node13/Dockerfile)  |
-| NodeJS 12       | Alpine v3.12 | node12        | [Dockerfile](https://github.com/dockette/ci/blob/master/node12/Dockerfile)  |
-| NodeJS 11       | Alpine v3.9  | node11        | [Dockerfile](https://github.com/dockette/ci/blob/master/node11/Dockerfile)  |
-| NodeJS 10       | Alpine v3.10 | node10        | [Dockerfile](https://github.com/dockette/ci/blob/master/node10/Dockerfile)  |
+| NodeJS          | OS           | Tag    | PM    | Dockerfile                                                                 |
+|-----------------|--------------|--------|--------|----------------------------------------------------------------------------|
+| NodeJS 22       | Alpine v3.20 | node22 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
+| NodeJS 21       | Alpine v3.19 | node21 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
+| NodeJS 20       | Alpine v3.18 | node20 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
+| NodeJS 19       | Alpine v3.17 | node19 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
+| NodeJS 18       | Alpine v3.16 | node18 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node18/Dockerfile)  |
+| NodeJS 17       | Alpine v3.16 | node17 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node17/Dockerfile)  |
+| NodeJS 16       | Alpine v3.13 | node16 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node16/Dockerfile)  |
+| NodeJS 15       | Alpine v3.12 | node15 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node15/Dockerfile)  |
+| NodeJS 14       | Alpine v3.12 | node14 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node14/Dockerfile)  |
+| NodeJS 13       | Alpine v3.11 | node13 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node13/Dockerfile)  |
+| NodeJS 12       | Alpine v3.12 | node12 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node12/Dockerfile)  |
+| NodeJS 11       | Alpine v3.9  | node11 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node11/Dockerfile)  |
+| NodeJS 10       | Alpine v3.10 | node10 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node10/Dockerfile)  |
 
 All Nodejs images have a few preinstalled packages:
 
 - bash 
 - git 
+- ca-certificates 
 - openssh
 - curl
-- openssh 
+- tzdata 
 - make
+- direnv
 - npm
+- pnpm (node18+)
 
 **Terminal**
 
