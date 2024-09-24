@@ -12,4 +12,4 @@ RUN echo '@main http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repo
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
-CMD node
+CMD ["node"]

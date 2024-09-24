@@ -11,4 +11,4 @@ RUN echo '@v314 http://dl-cdn.alpinelinux.org/alpine/v3.14/community' >> /etc/ap
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
-CMD node
+CMD ["node"]
