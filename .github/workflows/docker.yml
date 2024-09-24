@@ -38,6 +38,7 @@ jobs:
           - item: node19
           - item: node20
           - item: node21
+          - item: node22
           # PHP
           - item: php56
           - item: php70
@@ -48,6 +49,7 @@ jobs:
           - item: php80
           - item: php81
           - item: php82
+          - item: php83
           # Ansitest
           - item: ansitest
 
