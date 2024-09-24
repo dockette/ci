@@ -1,5 +1,5 @@
 DOCKER_IMAGE?=dockette/ci
-DOCKER_PLATFORM?=linux/amd64,linux/arm64
+DOCKER_PLATFORM?=linux/amd64
 
 _docker-build-%: VERSION=$*
 _docker-build-%:
@@ -34,5 +34,6 @@ build-node18: _docker-build-node18
 build-node19: _docker-build-node19
 build-node20: _docker-build-node20
 build-node21: _docker-build-node21
+build-node22: _docker-build-node22
 
 build-ansitest: _docker-build-ansitest
