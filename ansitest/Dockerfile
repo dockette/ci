@@ -19,6 +19,12 @@ RUN apt update && \
         software-properties-common \
         vagrant \
         wget && \
+    # DOCKER ###################################################################
+    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+    add-apt-repository "deb [arch=${TARGETARCH}] https://download.docker.com/linux/debian bullseye stable" && \
+    apt update && \
+    apt install --no-install-recommends -y docker-ce docker-ce-cli containerd.io && \
+    # ANSIBLE ##################################################################
     echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list.d/ansible.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     apt update && \
@@ -29,11 +35,6 @@ RUN apt update && \
         ansible.posix \
         community.general \
         community.docker && \
-    # DOCKER ###################################################################
-    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=${TARGETARCH}] https://download.docker.com/linux/debian bullseye stable" && \
-    apt update && \
-    apt install --no-install-recommends -y docker-ce docker-ce-cli containerd.io && \
     # CLEAN UP #################################################################
     apt-get clean -y && \
     apt-get autoclean -y && \
