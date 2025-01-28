@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.18
+FROM dockette/alpine:3.21
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
@@ -13,7 +13,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.18/community/' >> /etc/apk/repositories && \
+RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.21/community/' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -29,8 +29,6 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.18/community/' >> /
         gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
-        php82@community \
-        php82-pecl-apcu@community \
         php82-bcmath@community \
         php82-bz2@community \
         php82-calendar@community \
@@ -43,13 +41,10 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.18/community/' >> /
         php82-gd@community \
         php82-gettext@community \
         php82-iconv@community \
-        php82-pecl-imagick@community \
         php82-imap@community \
         php82-intl@community \
         php82-ldap@community \
         php82-mbstring@community \
-        php82-pecl-memcache@community \
-        php82-pecl-memcached@community \
         php82-mysqli@community \
         php82-mysqlnd@community \
         php82-openssl@community \
@@ -58,6 +53,11 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.18/community/' >> /
         php82-pdo_pgsql@community \
         php82-pdo_sqlite@community \
         php82-pdo@community \
+        php82-pecl-apcu@community \
+        php82-pecl-imagick@community \
+        php82-pecl-mailparse@community \
+        php82-pecl-memcache@community \
+        php82-pecl-memcached@community \
         php82-pgsql@community \
         php82-phar@community \
         php82-posix@community \
@@ -74,7 +74,9 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.18/community/' >> /
         php82-xmlwriter@community \
         php82-xsl@community \
         php82-zip@community \
-        php82-zlib@community && \
+        php82-zlib@community \
+        php82@community \
+        && \
         sed -i -- 's/zend/;zend/g' /etc/php82/conf.d/50_xdebug.ini && \
         echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \

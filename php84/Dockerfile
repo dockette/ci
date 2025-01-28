@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.20
+FROM dockette/alpine:3.21
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
@@ -29,8 +29,6 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/edge/community/' >> /e
         gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
-        php84@community \
-        php84-pecl-apcu@community \
         php84-bcmath@community \
         php84-bz2@community \
         php84-calendar@community \
@@ -43,13 +41,10 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/edge/community/' >> /e
         php84-gd@community \
         php84-gettext@community \
         php84-iconv@community \
-        php84-pecl-imagick@community \
         php84-imap@community \
         php84-intl@community \
         php84-ldap@community \
         php84-mbstring@community \
-        php84-pecl-memcache@community \
-        php84-pecl-memcached@community \
         php84-mysqli@community \
         php84-mysqlnd@community \
         php84-openssl@community \
@@ -58,6 +53,11 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/edge/community/' >> /e
         php84-pdo_pgsql@community \
         php84-pdo_sqlite@community \
         php84-pdo@community \
+        php84-pecl-apcu@community \
+        php84-pecl-imagick@community \
+        php84-pecl-mailparse@community \
+        php84-pecl-memcache@community \
+        php84-pecl-memcached@community \
         php84-pgsql@community \
         php84-phar@community \
         php84-posix@community \
@@ -74,7 +74,9 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/edge/community/' >> /e
         php84-xmlwriter@community \
         php84-xsl@community \
         php84-zip@community \
-        php84-zlib@community && \
+        php84-zlib@community \
+        php84@community \
+        && \
         sed -i -- 's/zend/;zend/g' /etc/php84/conf.d/50_xdebug.ini && \
         echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \

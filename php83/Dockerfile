@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.19
+FROM dockette/alpine:3.21
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
@@ -13,7 +13,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /etc/apk/repositories && \
+RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.21/community/' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -29,8 +29,6 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /
         gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
-        php83@community \
-        php83-pecl-apcu@community \
         php83-bcmath@community \
         php83-bz2@community \
         php83-calendar@community \
@@ -43,13 +41,10 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /
         php83-gd@community \
         php83-gettext@community \
         php83-iconv@community \
-        php83-pecl-imagick@community \
         php83-imap@community \
         php83-intl@community \
         php83-ldap@community \
         php83-mbstring@community \
-        php83-pecl-memcache@community \
-        php83-pecl-memcached@community \
         php83-mysqli@community \
         php83-mysqlnd@community \
         php83-openssl@community \
@@ -58,6 +53,11 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /
         php83-pdo_pgsql@community \
         php83-pdo_sqlite@community \
         php83-pdo@community \
+        php83-pecl-apcu@community \
+        php83-pecl-imagick@community \
+        php83-pecl-mailparse@community \
+        php83-pecl-memcache@community \
+        php83-pecl-memcached@community \
         php83-pgsql@community \
         php83-phar@community \
         php83-posix@community \
@@ -74,11 +74,12 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.19/community/' >> /
         php83-xmlwriter@community \
         php83-xsl@community \
         php83-zip@community \
-        php83-zlib@community && \
+        php83-zlib@community \
+        php83@community \
+        && \
         sed -i -- 's/zend/;zend/g' /etc/php83/conf.d/50_xdebug.ini && \
         echo "php -dzend_extension=xdebug.so \$@" >> $PHPXD_BIN && \
         chmod +x $PHPXD_BIN && \
-        ln -s $PHP8_BIN $PHP_BIN && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # CLEAN UP #################################################################
