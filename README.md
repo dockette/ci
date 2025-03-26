@@ -3,7 +3,7 @@
 <p align=center>
     :green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux 
     for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4
-    and Node.js 10, 11, 12, 13, 14, 15, 16, 17, 18
+    and Node.js 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
 </p>
 
 <p align=center>
@@ -50,6 +50,7 @@ All PHP images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php84
 docker run -it --rm -v $(pwd):/srv dockette/ci:php83
 docker run -it --rm -v $(pwd):/srv dockette/ci:php82
 docker run -it --rm -v $(pwd):/srv dockette/ci:php81
