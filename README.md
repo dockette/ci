@@ -97,6 +97,10 @@ All Nodejs images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:node22
+docker run -it --rm -v $(pwd):/srv dockette/ci:node21
+docker run -it --rm -v $(pwd):/srv dockette/ci:node20
+docker run -it --rm -v $(pwd):/srv dockette/ci:node19
 docker run -it --rm -v $(pwd):/srv dockette/ci:node18
 docker run -it --rm -v $(pwd):/srv dockette/ci:node17
 docker run -it --rm -v $(pwd):/srv dockette/ci:node16
