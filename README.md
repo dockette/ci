@@ -114,7 +114,6 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:node10
 |--------------------------------|--------------|---------------|----------------------------------------------------------------------------|
 | Ansible, Vagrant, Docker       | Debian 11    | ansitest      | [Dockerfile](https://github.com/dockette/ci/blob/master/ansitest/Dockerfile)  |
 
-
 -----
 
 Consider to [support](https://github.com/sponsors/f3l1x) **f3l1x**. Also thank you for using this package.
