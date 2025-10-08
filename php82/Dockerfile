@@ -29,8 +29,6 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.22/community/' >> /
         gnu-libiconv@community && \
     # PHP ######################################################################
     apk --no-cache add \
-        php82-apcu@community \
-        php82-amqp@community \
         php82-bcmath@community \
         php82-bz2@community \
         php82-calendar@community \
@@ -55,6 +53,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.22/community/' >> /
         php82-pdo_pgsql@community \
         php82-pdo_sqlite@community \
         php82-pdo@community \
+        php82-pecl-amqp@community \
         php82-pecl-apcu@community \
         php82-pecl-imagick@community \
         php82-pecl-mailparse@community \
