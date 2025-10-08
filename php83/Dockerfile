@@ -1,4 +1,4 @@
-FROM dockette/alpine:3.21
+FROM dockette/alpine:3.22
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
@@ -13,7 +13,7 @@ ENV COMPOSER_BIN=$COMPOSER_DIR/composer
 ENV TZ=Europe/Prague
 ENV LD_PRELOAD="/usr/lib/preloadable_libiconv.so php"
 
-RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.21/community/' >> /etc/apk/repositories && \
+RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.22/community/' >> /etc/apk/repositories && \
     # DEPENDENCIES #############################################################
     apk update && \
     apk upgrade && \
@@ -53,6 +53,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.21/community/' >> /
         php83-pdo_pgsql@community \
         php83-pdo_sqlite@community \
         php83-pdo@community \
+        php83-pecl-amqp@community \
         php83-pecl-apcu@community \
         php83-pecl-imagick@community \
         php83-pecl-mailparse@community \
