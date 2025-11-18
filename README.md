@@ -1,9 +1,9 @@
 <h1 align=center>Dockette / CI</h1>
 
 <p align=center>
-    :green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux 
+    :green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux
     for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4
-    and Node.js 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
+    and Node.js 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
 </p>
 
 <p align=center>
@@ -65,21 +65,23 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 ### NodeJS
 
-| NodeJS          | OS           | Tag    | PM    | Dockerfile                                                                 |
-|-----------------|--------------|--------|--------|----------------------------------------------------------------------------|
-| NodeJS 22       | Alpine v3.20 | node22 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 21       | Alpine v3.19 | node21 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 20       | Alpine v3.18 | node20 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 19       | Alpine v3.17 | node19 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile)  |
-| NodeJS 18       | Alpine v3.16 | node18 | npm, pnpm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node18/Dockerfile)  |
-| NodeJS 17       | Alpine v3.16 | node17 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node17/Dockerfile)  |
-| NodeJS 16       | Alpine v3.13 | node16 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node16/Dockerfile)  |
-| NodeJS 15       | Alpine v3.12 | node15 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node15/Dockerfile)  |
-| NodeJS 14       | Alpine v3.12 | node14 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node14/Dockerfile)  |
-| NodeJS 13       | Alpine v3.11 | node13 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node13/Dockerfile)  |
-| NodeJS 12       | Alpine v3.12 | node12 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node12/Dockerfile)  |
-| NodeJS 11       | Alpine v3.9  | node11 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node11/Dockerfile)  |
-| NodeJS 10       | Alpine v3.10 | node10 | npm   | [Dockerfile](https://github.com/dockette/ci/blob/master/node10/Dockerfile)  |
+| NodeJS               | OS           | Tag    | Node Version | npm Version | pnpm Version | Dockerfile                                                                 |
+|----------------------|--------------|--------|--------------|-------------|--------------|----------------------------------------------------------------------------|
+| NodeJS 24 (v22.16.0) | Alpine v3.22 | node24 | v22.16.0     | 11.4.2      | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node24/Dockerfile) |
+| NodeJS 23 (v23.11.1) | Alpine v3.22 | node23 | v23.11.1     | 11.4.2      | 10.9.0       | [Dockerfile](https://github.com/dockette/ci/blob/master/node23/Dockerfile) |
+| NodeJS 22 (v22.15.1) | Alpine v3.21 | node22 | v22.15.1     | 10.9.1      | 9.15.9       | [Dockerfile](https://github.com/dockette/ci/blob/master/node22/Dockerfile) |
+| NodeJS 21 (v21.7.3)  | Alpine v3.19 | node21 | v21.7.3      | 10.9.1      | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node21/Dockerfile) |
+| NodeJS 20 (v20.8.1)  | Alpine v3.18 | node20 | v20.8.1      | 9.6.6       | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node20/Dockerfile) |
+| NodeJS 19 (v19.7.0)  | Alpine v3.17 | node19 | v19.7.0      | 9.1.2       | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile) |
+| NodeJS 18 (v18.9.1)  | Alpine v3.16 | node18 | v18.9.1      | 8.10.0      | N/A          | [Dockerfile](https://github.com/dockette/ci/blob/master/node18/Dockerfile) |
+| NodeJS 17 (v17.9.0)  | Alpine v3.16 | node17 | v17.9.0      | 8.1.3       | N/A          | [Dockerfile](https://github.com/dockette/ci/blob/master/node17/Dockerfile) |
+| NodeJS 16 (v16.11.1) | Alpine v3.13 | node16 | v16.11.1     | 7.17.0      | N/A          | [Dockerfile](https://github.com/dockette/ci/blob/master/node16/Dockerfile) |
+| NodeJS 15 (v15.10.0) | Alpine v3.12 | node15 | v15.10.0     | 6.14.17     | N/A          | [Dockerfile](https://github.com/dockette/ci/blob/master/node15/Dockerfile) |
+| NodeJS 14            | Alpine v3.12 | node14 | -            | -           | -            | [Dockerfile](https://github.com/dockette/ci/blob/master/node14/Dockerfile) |
+| NodeJS 13            | Alpine v3.11 | node13 | -            | -           | -            | [Dockerfile](https://github.com/dockette/ci/blob/master/node13/Dockerfile) |
+| NodeJS 12            | Alpine v3.12 | node12 | -            | -           | -            | [Dockerfile](https://github.com/dockette/ci/blob/master/node12/Dockerfile) |
+| NodeJS 11            | Alpine v3.9  | node11 | -            | -           | -            | [Dockerfile](https://github.com/dockette/ci/blob/master/node11/Dockerfile) |
+| NodeJS 10            | Alpine v3.10 | node10 | -            | -           | -            | [Dockerfile](https://github.com/dockette/ci/blob/master/node10/Dockerfile) |
 
 All Nodejs images have a few preinstalled packages:
 
@@ -97,6 +99,9 @@ All Nodejs images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:node25
+docker run -it --rm -v $(pwd):/srv dockette/ci:node24
+docker run -it --rm -v $(pwd):/srv dockette/ci:node23
 docker run -it --rm -v $(pwd):/srv dockette/ci:node22
 docker run -it --rm -v $(pwd):/srv dockette/ci:node21
 docker run -it --rm -v $(pwd):/srv dockette/ci:node20
