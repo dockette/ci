@@ -67,7 +67,7 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS               | OS           | Tag    | Node Version | npm Version | pnpm Version | Dockerfile                                                                 |
 |----------------------|--------------|--------|--------------|-------------|--------------|----------------------------------------------------------------------------|
-| NodeJS 24 (v22.16.0) | Alpine v3.22 | node24 | v22.16.0     | 11.4.2      | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node24/Dockerfile) |
+| NodeJS 24 (v24.9.0)  | Alpine v3.22 | node24 | v24.9.0      | 11.4.2      | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node24/Dockerfile) |
 | NodeJS 23 (v23.11.1) | Alpine v3.22 | node23 | v23.11.1     | 11.4.2      | 10.9.0       | [Dockerfile](https://github.com/dockette/ci/blob/master/node23/Dockerfile) |
 | NodeJS 22 (v22.15.1) | Alpine v3.21 | node22 | v22.15.1     | 10.9.1      | 9.15.9       | [Dockerfile](https://github.com/dockette/ci/blob/master/node22/Dockerfile) |
 | NodeJS 21 (v21.7.3)  | Alpine v3.19 | node21 | v21.7.3      | 10.9.1      | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node21/Dockerfile) |
