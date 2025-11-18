@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(make:*)",
+      "Bash(docker:*)",
+      "Bash(chmod:*)",
+      "Bash(.scripts/versions.sh:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
