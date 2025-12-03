@@ -2,7 +2,7 @@
 
 <p align=center>
     :green_apple: :apple: :green_apple: Continuous integration Dockerfiles based on Alpine Linux
-    for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4
+    for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5
     and Node.js 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
 </p>
 
@@ -24,6 +24,7 @@
 
 | PHP      | OS           | Tag    | Dockerfile                                                                 |
 |----------|--------------|--------|----------------------------------------------------------------------------|
+| PHP 8.5  | Alpine edge  | php85  | [Dockerfile](https://github.com/dockette/ci/blob/master/php85/Dockerfile)  |
 | PHP 8.4  | Alpine v3.22 | php84  | [Dockerfile](https://github.com/dockette/ci/blob/master/php84/Dockerfile)  |
 | PHP 8.3  | Alpine v3.19 | php83  | [Dockerfile](https://github.com/dockette/ci/blob/master/php83/Dockerfile)  |
 | PHP 8.2  | Alpine v3.17 | php82  | [Dockerfile](https://github.com/dockette/ci/blob/master/php82/Dockerfile)  |
@@ -50,6 +51,7 @@ All PHP images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:php85
 docker run -it --rm -v $(pwd):/srv dockette/ci:php84
 docker run -it --rm -v $(pwd):/srv dockette/ci:php83
 docker run -it --rm -v $(pwd):/srv dockette/ci:php82
