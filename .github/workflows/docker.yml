@@ -53,6 +53,7 @@ jobs:
           - item: php82
           - item: php83
           - item: php84
+          - item: php85
           # Ansitest
           - item: ansitest
 

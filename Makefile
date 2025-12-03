@@ -21,6 +21,7 @@ build-php-8.1: _docker-build-php81
 build-php-8.2: _docker-build-php82
 build-php-8.3: _docker-build-php83
 build-php-8.4: _docker-build-php84
+build-php-8.5: _docker-build-php85
 
 build-node9: _docker-build-node9
 build-node10: _docker-build-node10
