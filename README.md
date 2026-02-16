@@ -128,3 +128,6 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:node10
 -----
 
 Consider to [support](https://github.com/sponsors/f3l1x) **f3l1x**. Also thank you for using this package.
+
+## Maintenance
+See [how to contribute](https://github.com/dockette/.github/blob/master/CONTRIBUTING.md) to this package. Consider to [support](https://github.com/sponsors/f3l1x) **f3l1x**. Thank you for using this package.
