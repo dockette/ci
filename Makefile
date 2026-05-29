@@ -1,5 +1,9 @@
 DOCKER_IMAGE?=dockette/ci
 DOCKER_PLATFORM?=linux/amd64
+DOCKER_BUILD_OUTPUT?=--load
+PHP_TEST_TAG?=php84
+NODE_TEST_TAG?=node24
+ANSIBLE_TEST_TAG?=ansitest
 
 _docker-build-%: VERSION=$*
 _docker-build-%:
@@ -7,8 +11,21 @@ _docker-build-%:
 		build \
 		--platform ${DOCKER_PLATFORM} \
 		--pull \
+		${DOCKER_BUILD_OUTPUT} \
 		-t ${DOCKER_IMAGE}:${VERSION} \
 		./${VERSION}
+
+build: build-php-8.4 build-node24 build-ansitest
+
+test: build
+	docker run --rm ${DOCKER_IMAGE}:${PHP_TEST_TAG} php -v
+	docker run --rm ${DOCKER_IMAGE}:${PHP_TEST_TAG} composer --version
+	docker run --rm ${DOCKER_IMAGE}:${NODE_TEST_TAG} node --version
+	docker run --rm ${DOCKER_IMAGE}:${NODE_TEST_TAG} npm --version
+	docker run --rm ${DOCKER_IMAGE}:${ANSIBLE_TEST_TAG} ansible --version
+
+run:
+	docker run -it --rm -v $$(pwd):/srv ${DOCKER_IMAGE}:${PHP_TEST_TAG}
 
 build-php-5.6: _docker-build-php56
 build-php-7.0: _docker-build-php70
