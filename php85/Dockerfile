@@ -59,6 +59,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/edge/community/' >> /e
         php85-pecl-mailparse@community \
         php85-pecl-memcache@community \
         php85-pecl-memcached@community \
+        php85-pecl-pcov@community \
         php85-pgsql@community \
         php85-phar@community \
         php85-posix@community \
