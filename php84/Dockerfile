@@ -59,6 +59,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.22/community/' >> /
         php84-pecl-mailparse@community \
         php84-pecl-memcache@community \
         php84-pecl-memcached@community \
+        php84-pecl-pcov@community \
         php84-pgsql@community \
         php84-phar@community \
         php84-posix@community \
