@@ -13,4 +13,4 @@ Steps:
 6. For versions without data (N/A), keep them with dash placeholders (e.g., `NodeJS 14 | Alpine v3.12 | node14 | - | - | -`)
 7. Show a summary of what was updated
 
-Important: Only update versions 15-24 in the table, leave versions 10-14 as they are with dashes.
+Important: Only update versions 15-26 in the table, leave versions 10-14 as they are with dashes.

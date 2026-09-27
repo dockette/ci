@@ -27,7 +27,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Array of node versions to check
-NODE_VERSIONS=(15 16 17 18 19 20 21 22 23 24)
+NODE_VERSIONS=(15 16 17 18 19 20 21 22 23 24 26)
 
 # Detect platform
 PLATFORM=$(uname -m)

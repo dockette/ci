@@ -1,6 +1,6 @@
 FROM dockette/alpine:3.21
 
-ENV NODEJS_VERSION=22.15.1
+ENV NODEJS_VERSION=22.23.2
 
 RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.21/community' >> /etc/apk/repositories && \
     apk update && apk upgrade && \
