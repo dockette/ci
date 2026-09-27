@@ -56,5 +56,6 @@ build-node21: _docker-build-node21
 build-node22: _docker-build-node22
 build-node23: _docker-build-node23
 build-node24: _docker-build-node24
+build-node26: _docker-build-node26
 
 build-ansitest: _docker-build-ansitest

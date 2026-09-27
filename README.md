@@ -25,9 +25,9 @@
 
 | PHP      | OS           | Tag    | Dockerfile                                                                 |
 |----------|--------------|--------|----------------------------------------------------------------------------|
-| PHP 8.5  | Alpine edge  | php85  | [Dockerfile](https://github.com/dockette/ci/blob/master/php85/Dockerfile)  |
-| PHP 8.4  | Alpine v3.22 | php84  | [Dockerfile](https://github.com/dockette/ci/blob/master/php84/Dockerfile)  |
-| PHP 8.3  | Alpine v3.22 | php83  | [Dockerfile](https://github.com/dockette/ci/blob/master/php83/Dockerfile)  |
+| PHP 8.5  | Alpine v3.24 | php85  | [Dockerfile](https://github.com/dockette/ci/blob/master/php85/Dockerfile)  |
+| PHP 8.4  | Alpine v3.24 | php84  | [Dockerfile](https://github.com/dockette/ci/blob/master/php84/Dockerfile)  |
+| PHP 8.3  | Alpine v3.24 | php83  | [Dockerfile](https://github.com/dockette/ci/blob/master/php83/Dockerfile)  |
 | PHP 8.2  | Alpine v3.22 | php82  | [Dockerfile](https://github.com/dockette/ci/blob/master/php82/Dockerfile)  |
 | PHP 8.1  | Alpine v3.19 | php81  | [Dockerfile](https://github.com/dockette/ci/blob/master/php81/Dockerfile)  |
 | PHP 8.0  | Alpine v3.15 | php80  | [Dockerfile](https://github.com/dockette/ci/blob/master/php80/Dockerfile)  |
@@ -70,9 +70,10 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:php56
 
 | NodeJS               | OS           | Tag    | Node Version | npm Version | pnpm Version | Dockerfile                                                                 |
 |----------------------|--------------|--------|--------------|-------------|--------------|----------------------------------------------------------------------------|
-| NodeJS 24 (v24.15.0) | Alpine v3.23 | node24 | v24.15.0     | 11.11.0     | 10.33.4      | [Dockerfile](https://github.com/dockette/ci/blob/master/node24/Dockerfile) |
+| NodeJS 26 (v26.5.1)  | Alpine v3.24 | node26 | v26.5.1      | 11.12.1     | 11.20.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node26/Dockerfile) |
+| NodeJS 24 (v24.18.1) | Alpine v3.24 | node24 | v24.18.1     | 11.12.1     | 11.20.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node24/Dockerfile) |
 | NodeJS 23 (v23.11.1) | Alpine v3.22 | node23 | v23.11.1     | 11.4.2      | 10.9.0       | [Dockerfile](https://github.com/dockette/ci/blob/master/node23/Dockerfile) |
-| NodeJS 22 (v22.15.1) | Alpine v3.21 | node22 | v22.15.1     | 10.9.1      | 9.15.9       | [Dockerfile](https://github.com/dockette/ci/blob/master/node22/Dockerfile) |
+| NodeJS 22 (v22.23.2) | Alpine v3.21 | node22 | v22.23.2     | 10.9.1      | 9.15.9       | [Dockerfile](https://github.com/dockette/ci/blob/master/node22/Dockerfile) |
 | NodeJS 21 (v21.7.3)  | Alpine v3.20 | node21 | v21.7.3      | 10.9.1      | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node21/Dockerfile) |
 | NodeJS 20 (v20.8.1)  | Alpine v3.18 | node20 | v20.8.1      | 9.6.6       | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node20/Dockerfile) |
 | NodeJS 19 (v19.7.0)  | Alpine v3.17 | node19 | v19.7.0      | 9.1.2       | 10.22.0      | [Dockerfile](https://github.com/dockette/ci/blob/master/node19/Dockerfile) |
@@ -106,6 +107,7 @@ All Nodejs images have a few preinstalled packages:
 **Terminal**
 
 ```
+docker run -it --rm -v $(pwd):/srv dockette/ci:node26
 docker run -it --rm -v $(pwd):/srv dockette/ci:node24
 docker run -it --rm -v $(pwd):/srv dockette/ci:node23
 docker run -it --rm -v $(pwd):/srv dockette/ci:node22
