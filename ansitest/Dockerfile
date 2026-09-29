@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 ARG TARGETARCH
 
@@ -20,16 +20,14 @@ RUN apt update && \
         vagrant \
         wget && \
     # DOCKER ###################################################################
-    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=${TARGETARCH}] https://download.docker.com/linux/debian bullseye stable" && \
+    install -m 0755 -d /etc/apt/keyrings && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc && \
+    echo "deb [arch=${TARGETARCH} signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable" > /etc/apt/sources.list.d/docker.list && \
     apt update && \
     apt install --no-install-recommends -y docker-ce docker-ce-cli containerd.io && \
     # ANSIBLE ##################################################################
-    echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list.d/ansible.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
-    apt update && \
     apt install -y ansible && \
-    pip3 install ansible-lint yamllint molecule molecule-plugins[docker]  && \
+    pip3 install --break-system-packages ansible-lint yamllint molecule molecule-plugins[docker] && \
     ansible-galaxy collection install --collections-path /usr/lib/python3/dist-packages/ansible_collections -U \
         ansible.utils \
         ansible.posix \
