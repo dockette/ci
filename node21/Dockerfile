@@ -8,7 +8,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.20/community' >> /e
     apk add --update bash git ca-certificates curl openssh tzdata make direnv && \
     # NODEJS ###################################################################
     apk add --update nodejs-current@community npm@community && \
-    corepack enable && corepack prepare pnpm@latest --activate && \
+    corepack enable && corepack prepare pnpm@10.34.6 --activate && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 

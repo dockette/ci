@@ -59,6 +59,20 @@ For quick local testing, you can use `--load` with your native platform:
 docker buildx build --load -t dockette/ci:node24 ./node24
 ```
 
+## Testing
+
+`.scripts/test.sh` runs smoke tests for one image. It checks the PHP or Node.js
+version, the main tools (composer, phpxd, npm, pnpm, ansible and more) and that
+PHP starts without warnings.
+
+```bash
+docker buildx build --load -t dockette/ci:node24 ./node24
+.scripts/test.sh node24
+```
+
+CI runs the same script for every image before the push, through the `test`
+input of the shared `dockette/.github` Docker workflow.
+
 ## Platform Detection
 
 To check your current platform:

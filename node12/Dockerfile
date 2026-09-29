@@ -8,7 +8,7 @@ RUN echo '@community http://dl-cdn.alpinelinux.org/alpine/v3.12/community' >> /e
     # DEPENDENCIES #############################################################
     apk add --update bash git ca-certificates curl openssh tzdata make direnv@v314 && \
     # NODEJS ###################################################################
-    apk add --update nodejs-current npm && \
+    apk add --update nodejs npm && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
