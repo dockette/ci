@@ -133,7 +133,7 @@ docker run -it --rm -v $(pwd):/srv dockette/ci:node6
 
 | Tools                          | OS           | Tag           | Dockerfile                                                                 |
 |--------------------------------|--------------|---------------|----------------------------------------------------------------------------|
-| Ansible, Vagrant, Docker       | Debian 11    | ansitest      | [Dockerfile](https://github.com/dockette/ci/blob/master/ansitest/Dockerfile)  |
+| Ansible, Vagrant, Docker       | Debian 12    | ansitest      | [Dockerfile](https://github.com/dockette/ci/blob/master/ansitest/Dockerfile)  |
 
 -----
 
