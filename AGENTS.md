@@ -70,8 +70,8 @@ docker buildx build --load -t dockette/ci:node24 ./node24
 .scripts/test.sh node24
 ```
 
-CI runs the same script for every image before the push, through the `test`
-input of the shared `dockette/.github` Docker workflow.
+CI runs the same script for every image in the `Test` job. The `Build` job
+builds and pushes the images only after all tests pass.
 
 ## Platform Detection
 
