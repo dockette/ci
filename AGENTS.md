@@ -61,17 +61,34 @@ docker buildx build --load -t dockette/ci:node24 ./node24
 
 ## Testing
 
-`.scripts/test.sh` runs smoke tests for one image. It checks the PHP or Node.js
-version, the main tools (composer, phpxd, npm, pnpm, ansible and more) and that
-PHP starts without warnings.
+Each image has a smoke test in `.scripts/test.sh`. To test an image, build it
+first, then run the script with the image directory name:
 
 ```bash
+# 1. Build the image and load it into the local Docker
 docker buildx build --load -t dockette/ci:node24 ./node24
+
+# 2. Run the smoke test
 .scripts/test.sh node24
 ```
 
-CI runs the same script for every image in the `Test` job. The `Build` job
-builds and pushes the images only after all tests pass.
+The script starts the image and prints `ok` or `FAIL` for each check. It exits
+with 1 if any check fails.
+
+To test an image with a different tag, pass the tag as the second argument:
+
+```bash
+.scripts/test.sh php84 my-local/ci:php84
+```
+
+What the script checks:
+
+- `phpXX`: PHP version, PHP starts without warnings, main extensions, `phpxd`, `composer`
+- `nodeXX`: Node.js version, `npm`, `pnpm` (node18 and newer)
+- `ansitest`: `ansible`, `ansible-lint`, `yamllint`, `molecule`, `docker`, `community.docker` collection
+- all images: `bash`, `git`, `curl`, `make`
+
+`make test` builds and tests `php84`, `node24` and `ansitest` in one step.
 
 ## Platform Detection
 
