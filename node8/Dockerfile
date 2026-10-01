@@ -8,7 +8,7 @@ RUN echo '@main http://dl-cdn.alpinelinux.org/alpine/v3.8/main' >> /etc/apk/repo
     # DEPENDENCIES #############################################################
     apk add --update bash git ca-certificates curl openssh tzdata make direnv@v314 && \
     # NODEJS ###################################################################
-    apk add --update nodejs-current@main && \
+    apk add --update nodejs-npm@main && \
     # CLEAN UP #################################################################
     rm -rf /var/cache/apk/*
 
